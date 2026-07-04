@@ -1,0 +1,6 @@
+interface:
+  display_name: "Math Modeling Suite"
+  short_description: "Coordinate six-stage contest modeling workflows"
+  default_prompt: "Use $math-modeling-suite to coordinate a six-stage mathematical modeling contest workflow."
+policy:
+  allow_implicit_invocation: true

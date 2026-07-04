@@ -1,0 +1,6 @@
+interface:
+  display_name: "Math Modeling Research"
+  short_description: "Research contest problems and maintain research notes"
+  default_prompt: "Use $math-modeling-research to research a modeling contest problem and maintain research.md."
+policy:
+  allow_implicit_invocation: true

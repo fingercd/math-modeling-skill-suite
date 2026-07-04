@@ -1,0 +1,6 @@
+interface:
+  display_name: "Math Modeling Writer"
+  short_description: "Draft CUMCM papers, TeX, tables, and figures"
+  default_prompt: "Use $math-modeling-writer to draft a CUMCM-style paper framework and maintain writer.md."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Math Modeling Review"
+  short_description: "Independently review modeling papers and artifacts"
+  default_prompt: "Use $math-modeling-review to independently review a modeling paper, code, figures, and support files."
+policy:
+  allow_implicit_invocation: true

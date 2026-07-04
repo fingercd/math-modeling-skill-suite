@@ -1,0 +1,6 @@
+interface:
+  display_name: "Math Modeling Code"
+  short_description: "Build lightweight Python models and result figures"
+  default_prompt: "Use $math-modeling-code to implement lightweight Python modeling experiments and maintain code.md."
+policy:
+  allow_implicit_invocation: true

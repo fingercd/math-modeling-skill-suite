@@ -1,0 +1,140 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,float}
+\usepackage{caption,subcaption}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\graphicspath{{../figures/}{figures/}}
+
+\title{论文题目}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+
+\begin{abstract}
+这里写一页内摘要。按问题顺序说明模型、方法、关键结果和结论。所有数值结论必须来自已确认结果，不要填写未验证数字。
+
+\textbf{关键词：} 关键词一；关键词二；关键词三；数学建模
+\end{abstract}
+\newpage
+
+\section{问题重述}
+用自己的语言重述任务、输入、输出、约束和评价目标，不照抄题面。
+
+\section{问题分析}
+说明每个子问题的求解逻辑和模块关系。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.86\textwidth]{modeling_workflow.pdf}
+  \caption{整体建模流程图。绘图完成后只需替换文件名或放入同名文件。}
+  \label{fig:workflow}
+\end{figure}
+
+\section{模型假设}
+\begin{enumerate}[label=H\arabic*:]
+  \item 假设一：说明必要性、合理性和可能影响。
+  \item 假设二：说明必要性、合理性和可能影响。
+\end{enumerate}
+
+\section{符号说明}
+\begin{table}[H]
+  \centering
+  \caption{主要符号说明}
+  \label{tab:notation}
+  \begin{tabular}{lll}
+    \toprule
+    符号 & 含义 & 单位 \\
+    \midrule
+    $x_i$ & 待填写变量含义 & 待填写 \\
+    $y_i$ & 待填写变量含义 & 待填写 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{数据处理与探索}
+说明数据来源、缺失值、异常值、标准化和特征构造。
+
+\begin{table}[H]
+  \centering
+  \caption{数据概览与处理说明}
+  \label{tab:data-overview}
+  \begin{tabular}{llll}
+    \toprule
+    变量 & 单位 & 问题 & 处理方式 \\
+    \midrule
+    待填写 & 待填写 & 缺失/异常/尺度 & 待填写 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{模型建立与求解}
+
+\subsection{问题一模型}
+写明目标函数、约束、算法步骤和输出。
+
+\begin{equation}
+  \min f(x) = \sum_i c_i x_i
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{q1_result.png}
+  \caption{问题一结果图。待代码生成后替换。}
+  \label{fig:q1-result}
+\end{figure}
+
+\subsection{问题二模型}
+写明模型结构、参数估计、评价指标和求解流程。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{q2_result.png}
+  \caption{问题二结果图。待代码生成后替换。}
+  \label{fig:q2-result}
+\end{figure}
+
+\subsection{问题三模型}
+写明拓展模型、优化方案或综合评价。
+
+\section{结果分析与检验}
+\begin{table}[H]
+  \centering
+  \caption{核心结果汇总}
+  \label{tab:result-summary}
+  \begin{tabular}{llll}
+    \toprule
+    子问题 & 指标 & 结果值 & 结论 \\
+    \midrule
+    问题一 & 待填写 & 待确认 & 待确认 \\
+    问题二 & 待填写 & 待确认 & 待确认 \\
+    问题三 & 待填写 & 待确认 & 待确认 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{灵敏度、误差与稳健性分析}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{sensitivity.png}
+  \caption{关键参数灵敏度分析图。待代码生成后替换。}
+  \label{fig:sensitivity}
+\end{figure}
+
+\section{模型评价、改进与推广}
+客观说明优点、局限、适用范围和后续改进方向。
+
+\begin{thebibliography}{99}
+\bibitem{ref1} 作者. 文献题名. 来源, 年份.
+\end{thebibliography}
+
+\appendix
+\section{支撑材料说明}
+列出代码文件、数据文件、图表文件和 AI 工具使用说明。完整代码放入支撑材料。
+
+\end{document}
