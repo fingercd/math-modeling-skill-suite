@@ -125,6 +125,13 @@ $S_d$ & 厚度灵敏度 $\Delta d/d / \Delta x / x$ & --- \\
 \label{fig:denoised}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.86\textwidth]{raw_vs_denoised.png}
+\caption{原始 vs 去噪反射率光谱对比 (sym8 小波, level=6, 通用阈值)。}
+\label{fig:raw-dn}
+\end{figure}
+
 \section{模型建立与求解}
 
 \subsection{问题一模型: 单次反射干涉}
@@ -311,6 +318,13 @@ Si 的双角度一致性比 (10°/15°): $|6.663 - 6.766| / \bar d \approx 1.5\%
 \label{fig:sensitivity}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.86\textwidth]{sensitivity_N.png}
+\caption{Q2 厚度对载流子浓度 $N$ 的扫描 ($N \in [10^{15}, 10^{20}]$~cm$^{-3}$, $\gamma=30$~cm$^{-1}$)。$d$ 在 $10^{17}$–$3\times 10^{19}$~cm$^{-3}$ 区间稳定于 7.4~µm, 仅在 $N \gtrsim 10^{19}$~cm$^{-3}$ 后漂移。}
+\label{fig:sensitivity-N}
+\end{figure}
+
 \begin{table}[H]
 \centering
 \caption{参数扰动 → $d$ 相对偏移}
@@ -330,7 +344,18 @@ $n_0\!\pm\!0.5\%$ & $\mp 0.5\%$ & 影响微弱 \\
 \noindent \textbf{关键结论}: Drude 部分载流子浓度 $N$ 是本模型的最大不确定度来源。若现场无 $N$ 独立标定, 推荐使用 $N$ 由 FTIR 等独立通道测得后, 再做极值法厚度反演。
 
 \section{模型评价、改进与推广}
-\textbf{优点:}
+
+\subsection{模型选择判据 (主推 Q2, 辅以 Q3)}
+
+本文同时给出 Q2 (极值点反演) 与 Q3 (TMM-FP 全谱反演) 两组结果, 现明确其权重:
+\begin{enumerate}
+\item \textbf{Q2 极值法 —— 主推荐}: $d_\text{SiC} = 7.444 \pm 0.044~\mu$m (双角度加权)。其优点是对 $n(\tilde{\nu})$ 模型细节依赖弱, 仅作用于条纹间距尺度; 不受 Sellmeier 占位系数的系统性偏移。
+\item \textbf{Q3 TMM-FP —— 辅参考}: $d_\text{SiC}^\text{TMM} \approx 6.57~\mu$m。该方法依赖 $n(\tilde{\nu})$ 全谱细节, 而本文采用的 Sellmeier 占位系数在 RMSE ~18\% 量级, 故给出 $d$ 的系统性偏低。
+\end{enumerate}
+
+\noindent \textbf{结论}: 主结果采用 Q2 = $7.44 \pm 0.04~\mu$m, TMM-FP 在 §9 局限段报告。
+
+\subsection{优点}
 \begin{enumerate}
 \item 模型物理清晰, 全部以光程差 + 干涉条件 + 多光束 Airy 三大解析准则为基础。
 \item 极值法 + 闭式间距 + 一维扫描联合, 可在没有 $N$ 精确先验下给出稳健 $d$。
