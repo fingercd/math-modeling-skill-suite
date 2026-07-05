@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.env
+.ipynb_checkpoints/
+
+# LaTeX generated files
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+*.synctex.gz
+
+# Local scratch
+work/
+tmp/
+.cache/
+
+# Keep logs when they prove a compile or validation failure.
+!*.log
