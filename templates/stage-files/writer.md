@@ -6,6 +6,9 @@
 - Owner:
 - Last updated:
 - Current gate:
+- Latest git status:
+- Stage commit SHA:
+- User waiver:
 
 ## Confirmed Paper Route
 
@@ -54,6 +57,14 @@
 | --- | --- | --- | --- |
 |  |  |  |  |
 
+## Contract Links
+
+| Contract | Expected path | Writer responsibility | Status |
+| --- | --- | --- | --- |
+| result contract | outputs/result_contract.json | every paper number has an entry | waiting |
+| constraint checks | outputs/constraint_checks.json | claims respect checked constraints | waiting |
+| figure manifest | outputs/figure_manifest.json | every TeX figure has a real file | waiting |
+
 ## User Revisions
 
 | Time | Request | Applied to |
@@ -63,3 +74,13 @@
 ## Next Gate
 
 - What must be confirmed before final paper writing:
+
+## Stage Checkpoint Evidence
+
+- `git status --short` output:
+- Commit command:
+- Commit SHA:
+- `paper/main.tex` source updated: no
+- `outputs/main.tex` final copy status:
+- Open `CRITICAL/MAJOR` review findings:
+- Open risks:

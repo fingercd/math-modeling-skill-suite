@@ -6,6 +6,9 @@
 - Owner:
 - Last updated:
 - Current gate:
+- Latest git status:
+- Stage commit SHA:
+- User waiver:
 
 ## Problem And Direction
 
@@ -73,3 +76,12 @@
 ## Next Gate
 
 - What the user must confirm before `(建模思路与论文框架)`:
+
+## Stage Checkpoint Evidence
+
+- `git status --short` output:
+- Commit command:
+- Commit SHA:
+- Data provenance checked: no
+- AI-use disclosure note updated: no
+- Open risks:

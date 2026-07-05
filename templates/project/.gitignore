@@ -1,8 +1,9 @@
-# virtual env / cache
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 .venv/
+.env
 .ipynb_checkpoints/
 
 # LaTeX generated files
@@ -13,10 +14,10 @@ __pycache__/
 *.toc
 *.synctex.gz
 
-# local scratch
+# Local scratch
 work/
 tmp/
 .cache/
 
-# Keep logs when they prove compile or validation failures.
+# Keep logs when they prove a compile or validation failure.
 !*.log

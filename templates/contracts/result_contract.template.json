@@ -1,0 +1,29 @@
+{
+  "schema_version": "2.0.0",
+  "project": {
+    "contest": "",
+    "problem": "",
+    "generated_at": "",
+    "owner": ""
+  },
+  "entries": [
+    {
+      "id": "Q1-M001",
+      "subquestion": "Q1",
+      "paper_location": "section/table/figure label",
+      "metric": "",
+      "value": null,
+      "unit": "",
+      "precision": "",
+      "script": "code/model_q1.py",
+      "input_files": [],
+      "output_files": [],
+      "parameters": {},
+      "random_seed": null,
+      "verification_method": "",
+      "confirmed": false,
+      "confirmed_by": "",
+      "notes": ""
+    }
+  ]
+}

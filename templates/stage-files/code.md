@@ -6,6 +6,9 @@
 - Owner:
 - Last updated:
 - Current gate:
+- Latest git status:
+- Stage commit SHA:
+- User waiver:
 
 ## Environment
 
@@ -42,11 +45,19 @@
 
 ## Paper-Facing Results
 
-| Subquestion | Result | Figure/table | Reproducibility note | Confirmed? |
-| --- | --- | --- | --- | --- |
-| Q1 |  |  |  | no |
-| Q2 |  |  |  | no |
-| Q3 |  |  |  | no |
+| Subquestion | Metric | Value | Unit | Script | Output file | Parameters | Confirmed? |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Q1 |  |  |  |  |  |  | no |
+| Q2 |  |  |  |  |  |  | no |
+| Q3 |  |  |  |  |  |  | no |
+
+## Contract Files
+
+| Contract | Path | Producer | Status |
+| --- | --- | --- | --- |
+| result contract | outputs/result_contract.json | code | waiting |
+| constraint checks | outputs/constraint_checks.json | code | waiting |
+| figure manifest | outputs/figure_manifest.json | code + writer | waiting |
 
 ## Failed Attempts
 
@@ -57,3 +68,12 @@
 ## Next Gate
 
 - What the user must confirm before `(实验结果汇总确认)`:
+
+## Stage Checkpoint Evidence
+
+- `git status --short` output:
+- Commit command:
+- Commit SHA:
+- Last full run command:
+- Last full run result:
+- Open risks:

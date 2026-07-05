@@ -6,6 +6,9 @@
 - Date:
 - Materials checked:
 - Materials missing:
+- Isolation statement:
+- Latest git status:
+- Review commit SHA:
 
 ## Risk Overview
 
@@ -63,6 +66,14 @@
 | Item | Needed material |
 | --- | --- |
 |  |  |
+
+## Stage 6 Gate Decision
+
+- Open CRITICAL findings:
+- Open MAJOR findings:
+- Stage 6 allowed: no
+- User waiver recorded in `outputs/manifest.md`: no
+- Waiver details:
 
 ## Recommended Fix Order
 

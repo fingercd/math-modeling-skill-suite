@@ -1,0 +1,26 @@
+{
+  "schema_version": "2.0.0",
+  "project": {
+    "contest": "",
+    "problem": "",
+    "generated_at": "",
+    "owner": ""
+  },
+  "checks": [
+    {
+      "id": "C001",
+      "subquestion": "Q1",
+      "constraint": "",
+      "expected_relation": "<=, >=, ==, in_range, nonnegative, integer, custom",
+      "expected_value": null,
+      "observed_value": null,
+      "unit": "",
+      "passed": false,
+      "severity": "MAJOR",
+      "source_script": "code/check_constraints.py",
+      "source_output": "outputs/constraint_checks.json",
+      "paper_locations": [],
+      "notes": ""
+    }
+  ]
+}

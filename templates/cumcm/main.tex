@@ -1,23 +1,47 @@
 \documentclass[UTF8,a4paper,12pt]{ctexart}
+\usepackage{iftex}
 \usepackage{geometry}
+\usepackage{setspace}
 \usepackage{amsmath,amssymb,booktabs,graphicx,float}
 \usepackage{caption,subcaption}
-\usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{longtable}
-\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
-\graphicspath{{../figures/}{figures/}}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
 
-\title{论文题目}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\setstretch{1.25}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\graphicspath{{../outputs/figures/}{figures/}{../figures/}{outputs/figures/}}
+
+\ifXeTeX
+  \setmainfont{Times New Roman}
+  \IfFontExistsTF{SimSun}{\setCJKmainfont{SimSun}[AutoFakeBold=2.5]}{}
+  \IfFontExistsTF{SimHei}{\setCJKsansfont{SimHei}}{}
+  \IfFontExistsTF{FangSong}{\setCJKmonofont{FangSong}}{}
+\fi
+
+\hypersetup{
+  hidelinks,
+  pdfborder={0 0 0},
+  pdftitle={论文题目},
+  pdfauthor={},
+  pdfsubject={CUMCM mathematical modeling paper}
+}
+
+\title{\heiti 论文题目}
 \author{}
 \date{}
 
 \begin{document}
+\pagenumbering{arabic}
 \maketitle
 \thispagestyle{plain}
 
 \begin{abstract}
-这里写一页内摘要。按问题顺序说明模型、方法、关键结果和结论。所有数值结论必须来自已确认结果，不要填写未验证数字。
+这里写一页内摘要。按问题顺序说明模型、方法、关键结果和结论。所有数值结论必须来自已确认结果，并能在 \texttt{outputs/result\_contract.json} 中追溯到脚本、参数和输出文件。
 
 \textbf{关键词：} 关键词一；关键词二；关键词三；数学建模
 \end{abstract}
@@ -58,7 +82,7 @@
 \end{table}
 
 \section{数据处理与探索}
-说明数据来源、缺失值、异常值、标准化和特征构造。
+说明数据来源、缺失值、异常值、标准化和特征构造。数据来源、许可和处理脚本需在支撑材料中可追溯。
 
 \begin{table}[H]
   \centering
@@ -135,6 +159,6 @@
 
 \appendix
 \section{支撑材料说明}
-列出代码文件、数据文件、图表文件和 AI 工具使用说明。完整代码放入支撑材料。
+列出代码文件、数据文件、图表文件、AI 工具使用说明和三个机器可读合同文件：\texttt{result\_contract.json}、\texttt{constraint\_checks.json}、\texttt{figure\_manifest.json}。完整代码放入支撑材料。
 
 \end{document}

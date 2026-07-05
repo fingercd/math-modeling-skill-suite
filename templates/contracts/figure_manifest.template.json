@@ -1,0 +1,23 @@
+{
+  "schema_version": "2.0.0",
+  "project": {
+    "contest": "",
+    "problem": "",
+    "generated_at": "",
+    "owner": ""
+  },
+  "figures": [
+    {
+      "label": "fig:q1-result",
+      "tex_path": "q1_result.png",
+      "real_path": "outputs/figures/q1_result.png",
+      "source_script": "code/plot_results.py",
+      "sha256": "",
+      "caption": "",
+      "referenced_in_tex": true,
+      "exists": false,
+      "missing_reason": "",
+      "notes": ""
+    }
+  ]
+}
