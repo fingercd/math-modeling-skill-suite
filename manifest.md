@@ -1,6 +1,7 @@
 # manifest.md
 
-Generated: 2026-07-04
+Generated: 2026-07-05
+Version: 2.0.0
 
 ## Deliverable
 
@@ -8,6 +9,8 @@ Generated: 2026-07-04
 | --- | --- | --- |
 | `README.md` | guide | Explain how to use the suite |
 | `LICENSE` | license | MIT open-source license |
+| `VERSION` | release marker | Current suite version |
+| `CHANGELOG.md` | release notes | v2.0.0 changes |
 | `manifest.md` | manifest | List files and validation notes |
 | `math-modeling-suite/SKILL.md` | skill | Six-stage controller |
 | `math-modeling-research/SKILL.md` | skill | Research workflow |
@@ -27,6 +30,15 @@ Generated: 2026-07-04
 | `templates/figures/flowchart-placeholder.md` | template | Flowchart placeholder and insertion guide |
 | `templates/tables/result-table-template.md` | template | Result table placeholders |
 | `templates/outputs/*.md` | template | Final delivery README, manifest, and AI-use statement templates |
+| `templates/contracts/*.json` | template | Result, constraint, and figure machine-readable contracts |
+| `templates/project/.gitignore` | template | Recommended project-level ignore rules |
+| `scripts/validate_skill_suite.py` | validator | Read-only suite static validation |
+| `scripts/validate_project_delivery.py` | validator | Read-only project delivery validation |
+| `scripts/run_regression_checks.py` | validator | Evidence regression checks |
+| `tests/evidence/pressure-run-2026-07-05/` | evidence | 2023A / 2024C / 2025B pressure-run archive |
+| `tests/evidence/expected_failures.json` | evidence config | Expected validator findings for pressure-run archive |
+| `AUDIT_PROMPT.md` | audit prompt | Independent audit prompt for the pressure run |
+| `AUDIT_REPORT.md` | audit report | Independent audit report that motivated v2.0.0 |
 
 ## Source Basis
 
@@ -40,11 +52,8 @@ Generated: 2026-07-04
 Run from the repository root:
 
 ```powershell
-python C:/Users/lenovo/.codex/skills/.system/skill-creator/scripts/quick_validate.py outputs/math-modeling-skill-suite/math-modeling-suite
-python C:/Users/lenovo/.codex/skills/.system/skill-creator/scripts/quick_validate.py outputs/math-modeling-skill-suite/math-modeling-research
-python C:/Users/lenovo/.codex/skills/.system/skill-creator/scripts/quick_validate.py outputs/math-modeling-skill-suite/math-modeling-writer
-python C:/Users/lenovo/.codex/skills/.system/skill-creator/scripts/quick_validate.py outputs/math-modeling-skill-suite/math-modeling-code
-python C:/Users/lenovo/.codex/skills/.system/skill-creator/scripts/quick_validate.py outputs/math-modeling-skill-suite/math-modeling-review
+C:/Users/lenovo/anaconda3/envs/pytorch/python.exe scripts/validate_skill_suite.py --root .
+C:/Users/lenovo/anaconda3/envs/pytorch/python.exe scripts/run_regression_checks.py --root .
 ```
 
 ## Known Limits
@@ -52,3 +61,5 @@ python C:/Users/lenovo/.codex/skills/.system/skill-creator/scripts/quick_validat
 - The suite is a handoff deliverable and is not installed into local Codex.
 - `templates/cumcm/main.tex` is a practical skeleton, not an official class file.
 - Official contest rules must be checked again before live submission.
+- Validators are read-only and do not auto-fix project files.
+- Pressure-run evidence intentionally contains known failures for regression testing.

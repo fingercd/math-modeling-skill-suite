@@ -2,6 +2,8 @@
 
 这是一套给数学建模竞赛用的 AI agent 工作流。它不是某一道题的答案，而是一套流程规范和模板，帮你把调研、建模、写论文、写代码、汇总结果、独立审查和最终交付分开管理。
 
+当前版本：`v2.0.0`。
+
 适合这些场景：
 
 - 高教社杯/CUMCM 国赛
@@ -31,6 +33,14 @@
 - `templates/first-response.md`：第一次启动时的回复模板
 - `templates/tables/result-table-template.md`：结果表格模板
 - `templates/figures/flowchart-placeholder.md`：流程图占位模板
+- `templates/contracts/*.json`：结果、约束、图表三类机器可读合同
+- `templates/project/.gitignore`：比赛项目推荐忽略规则
+
+2.0 新增了三类只读校验脚本：
+
+- `scripts/validate_skill_suite.py`：检查 skill 套装本身是否完整。
+- `scripts/validate_project_delivery.py`：检查某个比赛项目是否满足交付契约。
+- `scripts/run_regression_checks.py`：用 2023A / 2024C / 2025B 压测 evidence 验证校验器能抓住 1.0 暴露的问题。
 
 ## 最简单的用法
 
@@ -67,6 +77,15 @@ your-contest-project/
 
 最终交付只看 `outputs/`。不要到处翻聊天记录、临时文件和散落图片来拼最终版。
 
+2.0 对论文源文件和最终交付做了明确约定：
+
+- `paper/main.tex` 是写作源。
+- `outputs/main.tex` 是最终交付副本。
+- `outputs/main.pdf` 是最终 PDF；如果缺失，必须在 `outputs/README.md` 和 `outputs/manifest.md` 显眼说明。
+- `outputs/result_contract.json` 记录论文里的每个数字来自哪里。
+- `outputs/constraint_checks.json` 记录约束、可行性和一致性检查。
+- `outputs/figure_manifest.json` 记录 TeX 图引用、真实文件、来源脚本和 SHA256。
+
 ## 六个阶段
 
 agent 每次回复前都要标注当前阶段：
@@ -79,6 +98,14 @@ agent 每次回复前都要标注当前阶段：
 6. `(最终交付归档)`
 
 用户说“继续”“进入下一阶段”“方案批准”“推进”等意思相近的话，就可以进入下一阶段。不需要固定口令。
+
+但每个阶段退出前必须做检查点：
+
+- 更新当前阶段 MD。
+- 运行并记录 `git status --short`。
+- 能提交时创建阶段 commit，并把 commit SHA 写入阶段 MD。
+- 写清楚未解决风险和下一阶段门禁。
+- 阶段 5 如果还有未关闭的 `CRITICAL` 或 `MAJOR`，不能进入阶段 6，除非用户在 manifest 中显式豁免。
 
 ## 第一轮怎么开始
 
@@ -132,6 +159,8 @@ agent 应该先停在 `(全网广泛调研)`，不会直接写代码或写最终
 
 遇到这类任务，agent 应该写训练脚本和调参说明，让用户自己训练和调参。
 
+代码结果进入论文前，必须同步到 `outputs/result_contract.json`；关键约束和一致性检查必须同步到 `outputs/constraint_checks.json`。
+
 ## 论文规则
 
 默认按 CUMCM/高教社杯风格组织：
@@ -151,6 +180,8 @@ agent 应该先停在 `(全网广泛调研)`，不会直接写代码或写最终
 
 `templates/cumcm/main.tex` 已经预留了流程图、结果表、问题一/二结果图和灵敏度分析图的位置。真实图表生成后，通常只要改文件名或放入同名文件即可。
 
+论文中每个 `\includegraphics{...}` 最终都应出现在 `outputs/figure_manifest.json` 里。最终检查以 `outputs/` 为准。
+
 ## 最后一定要审查
 
 `math-modeling-review` 是独立审查 skill。它不应该凭聊天记忆判断，也不应该帮你编造结果。它只看你提供的论文、代码、图表和阶段记录，然后按严重程度输出问题：
@@ -159,6 +190,25 @@ agent 应该先停在 `(全网广泛调研)`，不会直接写代码或写最终
 - `MAJOR`：模型、验证、公式、图表、复现存在明显问题
 - `MINOR`：格式、引用、单位、caption 等小问题
 - `STYLE`：表达润色问题
+
+2.0 的规则更硬：审查报告中只要还有未关闭的 `CRITICAL` 或 `MAJOR`，就不能进入最终归档。用户确实要带风险交付时，需要在 `outputs/manifest.md` 记录豁免原因。
+
+## 怎么验证
+
+在仓库根目录运行：
+
+```powershell
+C:/Users/lenovo/anaconda3/envs/pytorch/python.exe scripts/validate_skill_suite.py --root .
+C:/Users/lenovo/anaconda3/envs/pytorch/python.exe scripts/run_regression_checks.py --root .
+```
+
+验证一个具体比赛项目：
+
+```powershell
+C:/Users/lenovo/anaconda3/envs/pytorch/python.exe scripts/validate_project_delivery.py --project path/to/your-contest-project
+```
+
+`tests/evidence/pressure-run-2026-07-05/` 保存了 2023A / 2024C / 2025B 三题压测产物。它们不是参考答案，而是 2.0 校验器的回归证据。
 
 ## 重要提醒
 
