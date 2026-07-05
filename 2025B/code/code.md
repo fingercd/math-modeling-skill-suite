@@ -62,15 +62,24 @@
 
 | Subquestion | Result | Figure/table | Reproducibility note | Confirmed? |
 | --- | --- | --- | --- | --- |
-| Q1 | 待结果确认 | tab:result1 | `q1_model.py` 复现: `python code/q1_model.py` | no |
-| Q2 | 待结果确认 | tab:result2 / fig:extrema_fit | `q2_extremum_fitter.py` 复现: seed=20250705 | no |
-| Q3 | 待结果确认 | tab:result3 / fig:multi_beam_condition | `q3_full_spectrum.py` 复现 | no |
+| Q1 | 闭式 $\Delta = 2d\sqrt{n^2-\sin^2\theta}$ | tab:notation / fig:q1_path | `python code/q1_model.py` | yes |
+| Q2 SiC (10°) | $d = 7.473 \pm 0.064$ µm | tab:result2 / fig:extrema_fit | `python code/q2_extremum_fitter.py`, seed=20250705 | yes |
+| Q2 SiC (15°) | $d = 7.418 \pm 0.060$ µm | tab:result2 / fig:extrema_fit | 同上 | yes |
+| Q3 SiC TMM (10°) | $d = 6.567$ µm RMSE 18% | tab:result3 / fig:tmm_fit | `python code/q3_full_spectrum.py` | yes (有 RMSE 偏差) |
+| Q3 SiC TMM (15°) | $d = 6.581$ µm RMSE 19% | 同上 | 同上 | yes |
+| Q3 Si TMM (10°) | $d = 6.663$ µm RMSE 14% | tab:result3 / fig:tmm_fit | 同上 | yes |
+| Q3 Si TMM (15°) | $d = 6.766$ µm RMSE 16% | 同上 | 同上 | yes |
+| 多角度一致 | 相对差 SiC 0.73%, Si 1.5% | fig:multi_angle_compare | `python code/multi_angle_compare.py` | yes |
+| 灵敏度 | $N\pm5\%$ 主, $\Delta d/d\approx\pm2.5\%$ | fig:sensitivity / tab:sensitivity | `python code/sensitivity.py` | yes |
 
 ## Failed Attempts
 
 | Time | Attempt | Failure | Lesson |
 | --- | --- | --- | --- |
-| — | — | — | 阶段 3 写实后补 |
+| 2026-07-05 | 3D DE 同时调 d, N, γ | N 撞角点 10^19 cm⁻³, DE 随机性大; d 在两附件间分歧 | 改: 固定 N=1e18, 1D 扫描 d + γ, 闭式间距作初值 |
+| 2026-07-05 | `pd.Series.rolling.fillna(method=…)` | pandas 3.0 移除 method kwarg | 改用 `.ffill().bfill()` |
+| 2026-07-05 | Plot 文本含 `ν̃` (combining tilde) | Microsoft YaHei 字形缺失警告 | 接受警告 (PNG 仍渲染), 图中用 mathtext `\tilde{\nu}` 替代 |
+| 2026-07-05 | Skyler-Luo 仓库 raw URL 含中文 | urlopen + Windows 默认编码撞车 | 用 percent-encoding 后 OK |
 
 ## Next Gate
 

@@ -11,16 +11,30 @@
 
 - Selected modeling route:
   - **Q1** 单次反射干涉:光程差闭式 + Drude–Sellmeier 折射率;纯解析
-  - **Q2** SiC 厚度反演:小波去噪 → 极值点定位 → 差分进化全局搜索 {d, N, γ} → 双角度一致性 → 不确定度
-  - **Q3** 多光束干涉:Fabry-Perot 判据 + TMM (Transfer Matrix Method) 全谱拟合 → Si (Q3 主) + SiC 残差分析 (反向应用) → 给出修正后厚度
-- Sections already drafted: 大纲骨架 (本文件)
-- Sections waiting for results: §5 结果, §6 灵敏度, §7 模型评价
+  - **Q2** SiC 厚度反演:小波去噪 → 极值点定位 → **闭式间距 + 一维残差扫描** → 双角度一致性 → 不确定度 (固定 N=1e18 cm⁻³、γ=30 cm⁻¹)
+  - **Q3** 多光束干涉:Fabry-Perot Airy 判据 + TMM 全谱拟合 → Si (主) + 反向应用到 SiC → 给出修正后厚度
+- Sections already drafted: 全部 (main.tex 已生成)
+- Sections waiting for results: 已用真实数字 (见下表)
 - Writing style notes:
   - 中文正文 + LaTeX 公式
   - 中文摘要放首页,关键词 5–7 个
   - 数学符号表置 §4
   - 图、表按"图 N / 表 N"流水号
   - 不写"获奖"承诺
+
+### 关键数值 (从 code 跑出,已核对)
+
+| 子问题 | 数值 | 来源 |
+| --- | --- | --- |
+| Q1 | $\Delta = 2d\sqrt{n^2-\sin^2\theta}$ | `q1_model.py` |
+| Q2 SiC (10°) | $d = 7.473 \pm 0.064$ µm | `q2_extremum_fitter.py` |
+| Q2 SiC (15°) | $d = 7.418 \pm 0.060$ µm | 同上 |
+| Q2 SiC 加权 | $\bar d = 7.444 \pm 0.044$ µm (相对差 0.73%) | `multi_angle_compare.py` |
+| Q3 SiC TMM (10°) | $d = 6.567$ µm (RMSE 18.0%) | `q3_full_spectrum.py` |
+| Q3 SiC TMM (15°) | $d = 6.581$ µm (RMSE 19.5%) | 同上 |
+| Q3 Si TMM (10°) | $d = 6.663$ µm (RMSE 13.6%) | 同上 |
+| Q3 Si TMM (15°) | $d = 6.766$ µm (RMSE 16.0%) | 同上 |
+| 灵敏度主项 | $N\pm5\% \Rightarrow \Delta d/d \approx \pm 2.5\%$ | `sensitivity.py` |
 
 ## Paper Outline
 
