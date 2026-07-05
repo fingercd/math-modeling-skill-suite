@@ -1,0 +1,6 @@
+# virtual env / cache
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.ipynb_checkpoints/
