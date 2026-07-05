@@ -1,0 +1,122 @@
+{
+  "result1_1.xlsx": {
+    "forced_passed": 5,
+    "forced_total": 5,
+    "details": {
+      "C1_area": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C2_water": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C3_rotation": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C7_smart": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C8_legume_3yr": {
+        "ok": false,
+        "msg": "violations=200 (skipped 8 water plots)"
+      },
+      "C10_normal_greenhouse": {
+        "ok": true,
+        "msg": "violations=0"
+      }
+    }
+  },
+  "result1_2.xlsx": {
+    "forced_passed": 5,
+    "forced_total": 5,
+    "details": {
+      "C1_area": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C2_water": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C3_rotation": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C7_smart": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C8_legume_3yr": {
+        "ok": false,
+        "msg": "violations=230 (skipped 8 water plots)"
+      },
+      "C10_normal_greenhouse": {
+        "ok": true,
+        "msg": "violations=0"
+      }
+    }
+  },
+  "result2.xlsx": {
+    "forced_passed": 5,
+    "forced_total": 5,
+    "details": {
+      "C1_area": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C2_water": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C3_rotation": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C7_smart": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C8_legume_3yr": {
+        "ok": false,
+        "msg": "violations=230 (skipped 8 water plots)"
+      },
+      "C10_normal_greenhouse": {
+        "ok": true,
+        "msg": "violations=0"
+      }
+    }
+  },
+  "result3.xlsx": {
+    "forced_passed": 5,
+    "forced_total": 6,
+    "details": {
+      "C1_area": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C2_water": {
+        "ok": false,
+        "msg": "violations=56"
+      },
+      "C3_rotation": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C7_smart": {
+        "ok": true,
+        "msg": "violations=0"
+      },
+      "C8_legume_3yr": {
+        "ok": true,
+        "msg": "violations=0 (skipped 8 water plots)"
+      },
+      "C10_normal_greenhouse": {
+        "ok": true,
+        "msg": "violations=0"
+      }
+    }
+  }
+}
