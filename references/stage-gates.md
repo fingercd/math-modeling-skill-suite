@@ -36,6 +36,32 @@
 | 独立审查 | 严重度分级问题清单 | 审查报告 | 代写新模型、承诺获奖 |
 | 最终交付归档 | `outputs/README.md`, `outputs/manifest.md`, 最终文件 | `outputs/manifest.md` | 从散落文件自动搜集未确认材料 |
 
+## 2.0 阶段检查点
+
+每个阶段退出前必须完成以下检查点，并把证据写入当前阶段 MD 或 `outputs/manifest.md`：
+
+1. 更新当前阶段 MD，记录本轮用户意见、动作、文件变化、未解决问题和下一阶段门禁。
+2. 运行 `git status --short`，把摘要写入阶段 MD。
+3. 在 git 仓库中创建阶段 commit。推荐格式：`stage(n): short description`。
+4. 记录 commit SHA；若无法提交，记录原因并让用户确认是否继续。
+5. 检查匿名性、AI 使用披露、数据来源、代码可运行性和论文结果一致性。
+6. 检查 `result_contract.json`、`constraint_checks.json`、`figure_manifest.json` 是否已达到当前阶段所需状态。
+
+阶段 5 额外门禁：只要独立审查仍有未关闭的 `CRITICAL` 或 `MAJOR`，禁止进入阶段 6。唯一例外是用户显式豁免，并在 `outputs/manifest.md` 记录问题编号、豁免原因、日期和剩余风险。
+
+阶段 6 额外门禁：必须在 `outputs/` 内生成并验证：
+
+- `README.md`
+- `manifest.md`
+- `main.tex`
+- `main.pdf`，若缺失必须显眼披露
+- `git-log.txt`
+- `git-status-final.txt`
+- `SHA256SUMS.txt`
+- `result_contract.json`
+- `constraint_checks.json`
+- `figure_manifest.json`
+
 ## 实时记录硬规则
 
 每轮用户对话后必须更新当前阶段对应 MD。更新内容至少包括：
@@ -58,3 +84,10 @@
 - 支撑材料与论文结果一致
 - 源代码完整可运行
 - 比赛期间不公开发布或讨论实时赛题内容
+
+## 输出源契约
+
+- `paper/main.tex` 是写作源。
+- `outputs/main.tex` 是交付副本。
+- 最终验证只从 `outputs/` 读取论文、图表、合同、README、manifest 和 PDF。
+- 不允许阶段 6 临时搜索散落文件补交付；缺什么就披露什么。

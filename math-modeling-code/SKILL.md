@@ -56,6 +56,7 @@ Record:
 - successful runs and failed attempts
 - results exported for `paper/writer.md`
 - open problems requiring user training, tuning, or data fixes
+- latest `git status --short`, stage commit SHA, and unresolved code risks before a stage transition
 
 Every paper-facing result must include script name, input, output file, parameter summary, and reproducibility note.
 
@@ -69,6 +70,16 @@ Write outputs to `figures/` for paper images and `outputs/` only for final expor
 - `outputs/result_summary.xlsx`
 
 Do not silently change a filename that `paper/writer.md` already references; update both records if a name changes.
+
+## Machine-Readable Contracts
+
+Generate or maintain these final delivery files when results are ready:
+
+- `outputs/result_contract.json`: one entry per paper-facing number, with subquestion, metric, value, unit, script, output file, parameters, and confirmation status.
+- `outputs/constraint_checks.json`: one entry per constraint or consistency check, with expected relation, observed value, pass/fail, severity, and source script.
+- `outputs/figure_manifest.json`: one entry per TeX figure, with label, TeX path, real file path, source script, SHA256, caption, and missing status.
+
+If a number, constraint, or figure cannot be verified, mark it unconfirmed instead of smoothing over the gap.
 
 ## Result Confirmation
 

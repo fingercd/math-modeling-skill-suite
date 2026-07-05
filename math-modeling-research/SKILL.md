@@ -37,6 +37,8 @@ Each update must include:
 - methods rejected and why
 - candidate routes per subquestion
 - next gate question for the user
+- data provenance, licensing, and live-contest disclosure status
+- `git status --short` and stage commit evidence before leaving the stage
 
 Write enough detail that a teammate can reproduce the search path and reasoning.
 
@@ -51,3 +53,7 @@ Return a compact synthesis:
 - `需用户确认`: decisions needed before `(建模思路与论文框架)`
 
 Include URLs for web sources. Do not cite sources you have not opened or verified.
+
+## Exit Gate
+
+Before `(建模思路与论文框架)`, confirm `research/research.md` contains enough evidence for each subquestion, rejected alternatives, and a recommended route. Run `git status --short`, commit the stage when possible, and record the commit SHA in `research/research.md`.

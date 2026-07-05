@@ -13,6 +13,8 @@ Act as an independent reviewer. Do not rely on prior chat conclusions, claimed i
 
 Do not write new models, invent missing results, promise awards, or silently edit the paper. Report issues and suggested fixes.
 
+Operationally, start from a clean review input list. If the user asks for an independent review, ignore earlier reasoning in the conversation and rebuild the evidence map only from files. Mention missing files as findings.
+
 ## Review Inputs
 
 Request or inspect these materials:
@@ -25,6 +27,10 @@ Request or inspect these materials:
 - source code and dependency notes
 - support material package notes
 - AI use statement
+- `outputs/result_contract.json`
+- `outputs/constraint_checks.json`
+- `outputs/figure_manifest.json`
+- `outputs/git-log.txt` and `outputs/git-status-final.txt` when available
 
 If a required input is missing, flag it as a review finding instead of guessing.
 
@@ -36,7 +42,8 @@ If a required input is missing, flag it as a review finding instead of guessing.
 4. Check assumptions, symbols, units, formulas, algorithms, and result consistency.
 5. Check code reproducibility against paper results.
 6. Check figures, tables, references, LaTeX labels, and placeholders.
-7. Output findings by severity.
+7. Check contract JSON files against TeX claims, figure paths, and output hashes.
+8. Output findings by severity.
 
 Use `../references/review-checklist.md` as the required checklist.
 
@@ -67,3 +74,5 @@ If no issues are found in a category, write `未发现`.
 ## Boundary
 
 The reviewer may recommend fixes but must not enter `(最终交付归档)`. The suite controller or user decides whether to revise, re-review, or deliver.
+
+If any `CRITICAL` or `MAJOR` finding remains open, write `禁止进入(最终交付归档)，除非用户在 manifest 中显式豁免` in the recommendation.

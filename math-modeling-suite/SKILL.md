@@ -18,6 +18,8 @@ Run the project as a six-stage state machine. Start every response with the curr
 
 Advance only when the user expresses approval or intent to continue, including phrases like `继续`, `进入下一阶段`, `方案批准`, `推进`, or equivalent wording. No fixed approval phrase is required.
 
+Before leaving any stage, run the 2.0 checkpoint gate in `../references/stage-gates.md`. The gate requires the active stage MD to be updated, `git status --short` to be recorded, a stage commit to be created when the workspace is a git repository, and unresolved risks to be written into the next gate. If git is unavailable, record the reason and ask the user whether to continue without a stage commit.
+
 ## Directory Contract
 
 Create and use exactly these project directories:
@@ -29,6 +31,15 @@ Create and use exactly these project directories:
 - `outputs/` for final deliverables only
 
 Do not automatically search scattered files when packaging delivery. The final package is assembled from `outputs/`.
+
+Use this source/output contract:
+
+- `paper/main.tex` is the editable writing source.
+- `outputs/main.tex` is the final delivery copy.
+- `figures/` stores working figures; `outputs/figures/` stores final referenced figures.
+- `outputs/result_contract.json` records every paper-facing number.
+- `outputs/constraint_checks.json` records feasibility, constraint, and consistency checks.
+- `outputs/figure_manifest.json` records every TeX figure reference and real file.
 
 ## Routing
 
@@ -49,6 +60,14 @@ After every user turn, update the current stage record:
 
 The record must let an outside teammate reconstruct the work without reading chat history. Include current status, decisions, user changes, actions taken, files touched, unresolved questions, and next gate.
 
+Each stage record must also include:
+
+- latest `git status --short` summary
+- stage commit SHA or explicit reason no commit was made
+- result, constraint, and figure contract status when applicable
+- data provenance and AI-use disclosure status
+- whether any `CRITICAL` or `MAJOR` review issue is still open
+
 ## CUMCM Defaults
 
 Use CUMCM/高教社杯 2026-style assumptions unless the user chooses another contest:
@@ -58,6 +77,7 @@ Use CUMCM/高教社杯 2026-style assumptions unless the user chooses another co
 - main body not over 30 pages
 - AI use disclosure and anonymity checks are part of every stage
 - source code and support files must be runnable and consistent with paper results
+- all final numbers and figures must be traceable through the contract JSON files
 
 Read `../references/stage-gates.md`, `../references/cumcm-2026-notes.md`, and `../references/cross-device-collaboration.md` when starting a new project.
 
@@ -74,5 +94,13 @@ In `(最终交付归档)`, copy or generate final materials under project `outpu
 - AI use statement
 - `README.md`
 - `manifest.md`
+- `outputs/git-log.txt`
+- `outputs/git-status-final.txt`
+- `outputs/SHA256SUMS.txt`
+- `result_contract.json`
+- `constraint_checks.json`
+- `figure_manifest.json`
 
-List any unresolved risks plainly. Do not claim the delivery is complete until the independent review has run or the user explicitly waives it.
+Before claiming delivery is complete, verify from inside `outputs/` that `main.tex`, all figure paths, contract JSON files, manifest, README, and SHA256 records are present. If `main.pdf` is missing or failed to compile, state that visibly in both `outputs/README.md` and `outputs/manifest.md`.
+
+Stage 5 blocks Stage 6 when any `CRITICAL` or `MAJOR` review finding remains open. The only exception is an explicit user waiver recorded in `outputs/manifest.md` with the finding IDs, reason, date, and remaining risk.

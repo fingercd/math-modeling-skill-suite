@@ -44,6 +44,8 @@ For flowcharts, use `../templates/figures/flowchart-placeholder.md`. The paper s
 
 For tables, use `../templates/tables/result-table-template.md` and include cell-level guidance on what the user should fill.
 
+Keep `paper/main.tex` as the writing source. During `(最终交付归档)`, copy the approved source to `outputs/main.tex` and validate the copy from `outputs/`, not from scattered project files.
+
 ## writer.md Contract
 
 Maintain `paper/writer.md` after every user turn. Use `../templates/stage-files/writer.md`.
@@ -57,6 +59,9 @@ Record:
 - user wording preferences and revisions
 - references and citation notes
 - final result statements waiting for confirmation
+- exact output file expected for each figure and table
+- contract status for `outputs/result_contract.json`, `outputs/constraint_checks.json`, and `outputs/figure_manifest.json`
+- latest `git status --short`, stage commit SHA, and open writing risks before a stage transition
 
 Never invent numerical conclusions. Write model background, assumptions, derivations, algorithm explanations, and generic result interpretation; fill final values only after the user or code stage confirms them.
 
@@ -67,7 +72,9 @@ During `(论文撰写与代码开发)`, coordinate with `math-modeling-code` thr
 - every figure placeholder must name the expected file, such as `figures/q1_trend.png`
 - every result table must list required columns and units
 - every paper claim must reference the code output or mark `待结果确认`
+- every paper number must have a matching `result_contract` entry before final writing
+- every figure in TeX must have a matching `figure_manifest` entry before final delivery
 
 ## Final Paper Rule
 
-Before final writing, check `code/code.md` and the confirmed result summary. If results are missing, write placeholders and ask for the missing values instead of fabricating them.
+Before final writing, check `code/code.md`, `outputs/result_contract.json`, `outputs/constraint_checks.json`, and `outputs/figure_manifest.json`. If results are missing, write placeholders and ask for the missing values instead of fabricating them. If `main.pdf` cannot be produced, the final README and manifest must say so plainly.

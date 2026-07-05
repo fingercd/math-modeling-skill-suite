@@ -8,6 +8,9 @@
 - 每轮工作后确认 `research/research.md`、`paper/writer.md`、`code/code.md` 已更新。
 - 图表文件名必须稳定；如果改名，同时更新论文 TeX 和 `writer.md`。
 - 代码输出结果要同步脚本名、输入数据、参数、输出文件、运行环境。
+- 编程手输出论文数字时，同时更新 `outputs/result_contract.json` 和 `outputs/constraint_checks.json`。
+- 论文手引用图片时，同时更新 `outputs/figure_manifest.json`。
+- 每次交接前运行 `git status --short`，确认已提交或在阶段 MD 中说明未提交原因。
 - 最终交付只从 `outputs/` 取，不从聊天记录或散落文件临时拼。
 
 ## 最小同步包

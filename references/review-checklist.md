@@ -8,8 +8,11 @@
 - 缺少完整可运行源代码，或代码运行结果与论文核心结论矛盾。
 - 摘要、正文或附录包含编造的实验结果。
 - 论文无法编译或最终 PDF 缺失关键页。
+- `outputs/main.pdf` 缺失且 README/manifest 没有显眼披露。
 - 某个题目子问没有回答。
 - AI 使用未按规则披露，或引用来源明显缺失。
+- `result_contract.json` 缺失，或论文核心数字没有脚本、输出文件、参数和确认状态。
+- `figure_manifest.json` 显示 TeX 引用图不存在。
 
 ## MAJOR
 
@@ -20,6 +23,9 @@
 - 缺少验证、误差分析、灵敏度或稳健性分析。
 - 图表和文字结论不一致。
 - 关键参数没有来源或解释。
+- `constraint_checks.json` 缺失，或关键约束未验证。
+- `paper/main.tex` 与 `outputs/main.tex` 的关系没有说明，最终交付不是从 `outputs/` 验证。
+- 阶段 MD 缺少 git status、commit SHA 或用户豁免记录。
 
 ## MINOR
 
@@ -29,6 +35,7 @@
 - 表格过长或未使用三线表风格。
 - 文件名与论文引用不一致。
 - 代码环境说明不完整。
+- `SHA256SUMS.txt`、`git-log.txt` 或 `git-status-final.txt` 缺少非关键条目。
 
 ## STYLE
 
