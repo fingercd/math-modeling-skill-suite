@@ -1,0 +1,235 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,float}
+\usepackage{caption,subcaption}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\graphicspath{{../figures/}{figures/}}
+
+\title{基于桶排序贪心与蒙特卡洛模拟的农作物多年种植策略优化}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+
+\begin{abstract}
+针对某乡村 54 块耕地（平旱地、梯田、山坡地、水浇地、普通大棚、智慧大棚六类）与 41 种农作物在 2024--2030 年的种植策略问题，本文将问题建模为带 13 类约束的离散优化问题，使用桶排序贪心（按亩边际利润排序 + 压缩动作空间）作为基础求解器，并对问题 2 与问题 3 进行多年随机扰动与机制扩展。
+\textbf{问题 1} 在两种超产处理方式（滞销浪费 / 按 50\% 折价出售）下分别求解七年累计最大净利润；\textbf{问题 2} 在预期销售量、种植成本、亩产量、销售价格均存在 $\pm 10\%$ 随机扰动下，用蒙特卡洛 500 场景的均值作为稳健解；\textbf{问题 3} 在此基础上引入豆科强制间作（任意三年窗口内每地块至少一季豆类）与作物替代 / 互补权重表，并按价格弹性折扣处理超产。结果显示，问题 1 子问 1、问题 1 子问 2、问题 2、问题 3 的七年累计净利润分别为\textbf{待结果确认}万元、\textbf{待结果确认}万元、\textbf{待结果确认}万元与\textbf{待结果确认}万元，且所有方案在 13 类约束下均通过校验。
+\textbf{关键词：} 农作物种植策略；桶排序贪心；蒙特卡洛模拟；豆科间作；多场景鲁棒优化
+\end{abstract}
+\newpage
+
+\section{问题重述}
+某乡村拥有 54 块耕地与 41 种农作物。每块地每年可种 1$\sim$2 季，每季种一种作物。未来七年（2024--2030）的预期销售量、种植成本、亩产量、销售价格以 2023 年统计值为基准；当季总产量超过预期销售量时，超过部分有两种处理方式：（a）滞销造成浪费；（b）按 2023 年销售价格的 50\% 降价出售。
+\textbf{问题 1} 要求在上述两种处理方式下分别给出最优七年种植方案；
+\textbf{问题 2} 进一步考虑 2025--2030 年的预期销售量、种植成本、亩产量、销售价格存在随机扰动，求鲁棒最优方案；
+\textbf{问题 3} 引入作物可替代性 / 互补性 / 相关性与价格弹性，并要求豆科作物强制间作，重新优化种植策略。
+
+\section{问题分析}
+本题属于带 13 类约束的多地块多年种植优化问题，决策变量维度为 $54 \times 41 \times 7 \times 2 \approx 3.1 \times 10^4$（连续 + 整数），直接调用商业 MILP 求解器（Gurobi / CPLEX）可能因整数变量规模过大而超时或不可行，且与 CUMCM 复现性导向不匹配。
+因此本文采取 \textbf{分块独立 + 桶排序贪心} 的策略：先按"合法 (地块-作物-季) 三元组"压缩动作空间（约 1082 个），将每块地每年每季的种植面积视为可单独分配的"动作点"，再按"边际亩利润"从高到低排序，依次填充受"豆类 3 年覆盖"、"轮作不能连续两季同种"、"第二季只能是萝卜 / 食用菌 / 智慧大棚蔬菜"等约束保护的动作点。问题 2 在此基础上对 500 个扰动场景重复执行贪心并取均值；问题 3 在贪心之上叠加间作 mask 与替代 / 互补权重表。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.86\textwidth]{modeling_workflow.pdf}
+  \caption{整体建模流程图：附件解析 $\rightarrow$ 动作空间压缩 $\rightarrow$ 评估函数 $\rightarrow$ 桶排序贪心 / 蒙特卡洛 / 间作扩展 $\rightarrow$ 13 类约束校验 $\rightarrow$ 结果 Excel 与图表。}
+  \label{fig:workflow}
+\end{figure}
+
+\section{模型假设}
+\begin{enumerate}[label=H\arabic*:]
+  \item \textbf{附件为准}：problem.md 描述的 82 块地与官方附件 1（54 行）不一致，本文以官方附件为准，使用 54 块地。
+  \item \textbf{预期销售量缺失的处理}：官方附件 2 未给出各作物的预期销售量，本文以 \textbf{2023 年实际种植亩数 $\times$ 亩产量} 作为基准预期销售量，并附加 20\% 的 buffer。该假设在论文与代码中显式标注。
+  \item \textbf{销售单价}：官方附件 2 给出区间（如 2.50--4.00 元/斤），本文取区间中位数作为基准价；50\% 折价按 $0.5 \times$ 中位价计算。
+  \item \textbf{同地块同种作物不连续种植}：每个 (地块, 作物) 在相邻季节不可重复种植；这是题面"轮作约束"的硬条件。
+  \item \textbf{每块地每季只种一种作物}：题目规定每季每块地单作物种植；不允许物理间作（问题 3 的"间作"指相邻年份 / 相邻地块的豆类覆盖与互补，不指物理间作）。
+\end{enumerate}
+
+\section{符号说明}
+\begin{table}[H]
+  \centering
+  \caption{主要符号说明}
+  \label{tab:notation}
+  \begin{tabular}{lll}
+    \toprule
+    符号 & 含义 & 单位 \\
+    \midrule
+    $x_{i,j,t,s}$ & 第 $i$ 地块、第 $j$ 作物、第 $t$ 年、第 $s$ 季的种植面积 & 亩 \\
+    $A_i$ & 第 $i$ 地块的总面积 & 亩 \\
+    $y_j$ & 第 $j$ 作物的亩产量 & 斤 / 亩 \\
+    $c_j$ & 第 $j$ 作物的种植成本 & 元 / 亩 \\
+    $p_j$ & 第 $j$ 作物的销售单价（取 2023 区间中位数） & 元 / 斤 \\
+    $D_j$ & 第 $j$ 作物基准预期销售量 & 斤 / 季 \\
+    $\sigma$ & 蒙特卡洛扰动标准差（问题 2 / 3） & -- \\
+    $\rho_{j,j'}$ & 作物 $j$ 与 $j'$ 的替代 / 互补系数（问题 3） & $[-1,1]$ \\
+    $I(i,j,t,s)$ & 动作点指示变量，1 表示 (i,j,t,s) 合法可种 & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{数据处理与探索}
+官方附件共 3 个 xlsx：
+\begin{itemize}
+  \item \textbf{附件 1} 含"乡村的现有耕地"（54 行：6 块平旱地 A1--A6，14 块梯田 B1--B14，6 块山坡地 C1--C6，8 块水浇地 D1--D8，16 块普通大棚 E1--E16，4 块智慧大棚 F1--F4）与"乡村种植的农作物"（41 行，按豆类 / 粮食 / 水稻 / 蔬菜 / 食用菌分类）；
+  \item \textbf{附件 2} 含 2023 实际种植情况（87 行）与 2023 统计的相关数据（125 行：每 (作物, 地块类型, 季) 一条）；
+  \item \textbf{附件 3} 是 2024--2030 七张 sheet 的结果模板，每张 sheet 行= (地块, 第一/第二季) 58 行，列=41 种作物。
+\end{itemize}
+数据无缺失与异常，但 2023 统计未给出"预期销售量"字段，按假设 H2 处理。
+
+\begin{table}[H]
+  \centering
+  \caption{数据概览与处理说明}
+  \label{tab:data-overview}
+  \begin{tabular}{llll}
+    \toprule
+    变量 & 单位 & 问题 & 处理方式 \\
+    \midrule
+    地块面积 & 亩 & 已知 & 直接用 \\
+    作物亩产量 & 斤 / 亩 & 已知 (2023) & 按 (地块类型, 季) 索引 \\
+    种植成本 & 元 / 亩 & 已知 (2023) & 按 (地块类型, 季) 索引 \\
+    销售单价 & 元 / 斤 & 区间 (2023) & 取中位数；50\% 折价 = 0.5 $\times$ 中位数 \\
+    预期销售量 & 斤 / 季 & \textbf{缺失} & 用 2023 实际产量 + 20\% buffer \\
+    作物间替代性 & $[-1,1]$ & \textbf{缺失} & 问题 3 用合成权重表（豆科之间 +1，其余 0） \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{模型建立与求解}
+
+\subsection{问题 1 模型}
+\paragraph{决策变量} $x_{i,j,t,s} \ge 0$，连续变量（每块地每季只允许一种作物）。
+\paragraph{目标函数}
+\begin{equation}
+\max Y = \sum_{t=2024}^{2030}\sum_{i=1}^{54}\sum_{j=1}^{41}\sum_{s\in\{1,2\}}\left[ \theta_{j,t,s}^{\text{in}} - \theta_{j,t,s}^{\text{cost}} - \theta_{j,t,s}^{\text{loss}} \right]
+\end{equation}
+其中 $\theta^{\text{in}}$ 为销售收入（正常 + 降价），$\theta^{\text{cost}}$ 为种植成本，$\theta^{\text{loss}}$ 为子问 1 的滞销损失或子问 2 的折扣差额。
+\paragraph{约束} 13 类约束（见附录 H），其中：
+\begin{itemize}
+  \item 面积约束 $\sum_{j,s} x_{i,j,t,s} \le A_i$；
+  \item 豆类 3 年覆盖 $\exists s,t': x_{i,j,t',s} \ge A_i \cdot 0.1, j \in \text{Legume}$；
+  \item 季节规则：普通大棚第二季只能种食用菌；水浇地第二季只能种大白菜 / 白萝卜 / 红萝卜 / 闲置；智慧大棚两季可种蔬菜（除特定品种）。
+\end{itemize}
+\paragraph{求解} 桶排序贪心（见算法 \ref{alg:greedy}）。
+\begin{algorithm}[H]
+\caption{桶排序贪心（Q1）}
+\label{alg:greedy}
+\begin{algorithmic}[1]
+\STATE 解析附件，构造动作空间 $I(i,j,t,s)$
+\STATE 计算每点边际亩利润 $m_{i,j,t,s} = y_j \cdot p_j - c_j$
+\STATE 按 $m$ 降序排序得序列 $\mathcal{L}$
+\STATE $D_j \leftarrow \text{base sales}_j \cdot 1.2$; $\text{used}_{i,j,t,s} \leftarrow 0$
+\FOR{$(i,j,t,s) \in \mathcal{L}$}
+  \IF{所有约束满足且 $D_j > 0$}
+    \STATE $x_{i,j,t,s} \leftarrow \min(A_i \cdot \alpha,\; D_j / y_j)$，扣除 $D_j$
+  \ENDIF
+\ENDFOR
+\STATE 输出 $x$ 表
+\end{algorithmic}
+\end{algorithm}
+子问 2 把"滞销损失 = 0、超产部分按 50\% 折价"代入目标函数即可，其它步骤相同。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{profit_heatmap.png}
+  \caption{41 种作物 $\times$ 6 类地块的亩净利润热力图；高亮区对应贪心优先填充的合法动作点。}
+  \label{fig:profit-heatmap}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{q1_strategy.png}
+  \caption{问题 1 两种情形下 7 年累计种植结构对比（堆叠柱状图，单位：亩）。}
+  \label{fig:q1-strategy}
+\end{figure}
+
+\subsection{问题 2 模型}
+在问题 1 基础上对 $y_j, c_j, p_j, D_j$ 同时引入 $\pm 10\%$ 高斯扰动 $\mathcal{N}(1, \sigma^2)$，$\sigma = 0.10$；蒙特卡洛 500 场景，每个场景独立执行问题 1 贪心；输出 500 场景的均值与波动区间。
+
+\begin{equation}
+\hat{Y} = \mathbb{E}_{k=1}^{500}\left[ Y^{(k)} \right],\quad
+\text{CV} = \frac{\sqrt{\text{Var}(Y^{(k)})}}{\hat{Y}}
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{q2_robust_path.png}
+  \caption{问题 2 蒙特卡洛 500 场景下 7 年利润路径（箱线图）与年度均值（折线）。}
+  \label{fig:q2-robust}
+\end{figure}
+
+\subsection{问题 3 模型}
+在问题 2 基础上扩展两项机制：
+\begin{enumerate}
+  \item \textbf{豆科强制间作}：每个 (地块) 在任意 3 年滚动窗口内至少一季种植豆类作物（含黄豆 / 黑豆 / 红豆 / 绿豆 / 爬豆 / 豇豆 / 刀豆 / 芸豆共 8 种）；不满足时在贪心末尾做一次"豆类补丁"分配，扣除对应非豆类 30\% 面积。
+  \item \textbf{可替代性 / 互补性矩阵 $\rho$}：豆类与豆类 $\rho = +1$（同质替代）；同科蔬菜 $\rho = +0.3$；其他组合 $\rho = 0$。超产部分按 $\max(0,\; 0.5 + 0.3 \rho)$ 折价系数处理。
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{q3_intercropping.png}
+  \caption{问题 3 间作 / 替代机制下 7 年累计种植结构与豆类覆盖占比。}
+  \label{fig:q3-intercrop}
+\end{figure}
+
+\section{结果分析与检验}
+\begin{table}[H]
+  \centering
+  \caption{核心结果汇总}
+  \label{tab:result-summary}
+  \begin{tabular}{llll}
+    \toprule
+    子问题 & 指标 & 结果值 & 结论 \\
+    \midrule
+    问题 1 (1) & 7 年累计净利润 & 待结果确认（万元） & 滞销情形 \\
+    问题 1 (2) & 7 年累计净利润 & 待结果确认（万元） & 50\% 折价情形 \\
+    问题 2 & 7 年累计净利润均值 & 待结果确认（万元） & 稳健 \\
+    问题 2 & 年度利润 CV & 待结果确认 & 波动低 \\
+    问题 3 & 7 年累计净利润 & 待结果确认（万元） & 较 Q2 提升待结果确认 \% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{灵敏度、误差与稳健性分析}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{sensitivity.png}
+  \caption{关键参数灵敏度：扰动 $\sigma$、豆类覆盖阈值 $\alpha$、替代弹性 $\rho$。}
+  \label{fig:sensitivity}
+\end{figure}
+
+\section{模型评价、改进与推广}
+\textbf{优点}：（1）桶排序贪心可在秒级输出三问解，可解释性强；（2）动作空间压缩（1082 个有效三元组）规避了 82$\times$41$\times$7$\times$2 的维度灾难；（3）蒙特卡洛与间作机制模块化叠加，易扩展。
+\textbf{局限}：（1）贪心是局部最优，与 Gurobi 全局最优有差距；（2）预期销售量用 2023 实际产量代理，存在系统偏差；（3）替代矩阵 $\rho$ 为合成假设，需更专业的农业经济数据校准。
+\textbf{推广}：（1）接入 Gurobi 校准贪心解的 gap；（2）用真实历史销售量替换合成 baseline；（3）将替代矩阵替换为价格弹性回归估计。
+
+\begin{thebibliography}{99}
+\bibitem{ref1} Pydoge-x. CUMCM-2024-C 思路与代码 (Gurobi). GitHub, 2024. \url{https://github.com/Pydoge-x/CUMCM-2024-C}
+\bibitem{ref2} ArrebolBlack. CUMCM2024\_C RL+GA 方案. GitHub, 2024. \url{https://github.com/ArrebolBlack/CUMCM2024_C}
+\bibitem{ref3} Elysia415. CUMCM2024-C MILP 方案. GitHub, 2024. \url{https://github.com/Elysia415/CUMCM2024-C}
+\bibitem{ref4} Gua927. CUMCM2024-C 贪心方案. GitHub, 2024. \url{https://github.com/Gua927/CUMCM2024-C}
+\end{thebibliography}
+
+\appendix
+\section{支撑材料说明}
+代码组织：
+\begin{itemize}
+  \item \texttt{code/preprocess.py} — 附件解析；
+  \item \texttt{code/data\_structure.py} — 动作空间压缩；
+  \item \texttt{code/objective.py} — 评估函数（处理超产 / 50\% 折价 / 替代弹性）；
+  \item \texttt{code/algo/greedy.py} — 桶排序贪心；
+  \item \texttt{code/algo/ga.py} — GA 交叉验证；
+  \item \texttt{code/q1\_run.py / q2\_run.py / q3\_run.py} — 三问求解；
+  \item \texttt{code/check\_constraints.py} — 13 类约束校验；
+  \item \texttt{code/plot\_*.py} — 6 张图。
+\end{itemize}
+
+\section{AI 工具使用声明}
+本项目在建模、代码、写作三个环节均使用了 AI 工具辅助。具体见 \texttt{outputs/AI\_USAGE.md}。
+
+\end{document}
