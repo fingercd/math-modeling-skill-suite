@@ -1,0 +1,43 @@
+{
+  "suite": "pressure-run-2026-07-05",
+  "cases": [
+    {
+      "project": "tests/evidence/pressure-run-2026-07-05/2023A",
+      "expected_issue_codes": [
+        "stage_commits_missing",
+        "missing_result_contract",
+        "missing_constraint_checks",
+        "missing_figure_manifest",
+        "paper_outputs_tex_identical",
+        "latex_log_error",
+        "review_fix_not_closed"
+      ],
+      "notes": "2023A exposed the missing stage-commit gate and unclosed review re-run evidence."
+    },
+    {
+      "project": "tests/evidence/pressure-run-2026-07-05/2024C",
+      "expected_issue_codes": [
+        "stage_commits_missing",
+        "missing_result_contract",
+        "missing_constraint_checks",
+        "missing_figure_manifest",
+        "paper_outputs_tex_identical",
+        "latex_log_error",
+        "review_fix_not_closed"
+      ],
+      "notes": "2024C exposed temporary compile artifacts, missing 2.0 contracts, and unclosed MAJOR findings."
+    },
+    {
+      "project": "tests/evidence/pressure-run-2026-07-05/2025B",
+      "expected_issue_codes": [
+        "outputs_pdf_missing",
+        "missing_result_contract",
+        "missing_constraint_checks",
+        "missing_figure_manifest",
+        "paper_outputs_tex_identical",
+        "review_fix_not_closed"
+      ],
+      "notes": "2025B exposed missing outputs PDF, missing contracts, and a review report that explicitly blocked stage 6."
+    }
+  ]
+}

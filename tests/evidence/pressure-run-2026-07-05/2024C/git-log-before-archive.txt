@@ -1,0 +1,7 @@
+﻿be4b307 stage(6): final delivery (paper + code + figures + tables + manifest)
+d97b529 stage(5): independent review report
+c99f430 stage(4): confirm final results + tag stage4-results
+3dd2c4b stage(3): full code + outputs + figures
+63c41d6 stage(2): paper outline + main.tex C-question draft + code plan + writer/code MDs
+e83f419 stage(1): research draft + 4 attachment CSVs downloaded from Skyler-Luo/CUMCM2025-B
+aee80ef test(2024C): scaffold crop-planting-strategy project + problem + prompt + .gitkeep skeletons

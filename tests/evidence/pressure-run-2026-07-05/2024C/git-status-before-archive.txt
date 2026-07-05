@@ -1,0 +1,6 @@
+﻿?? 2024C/paper/main.aux
+?? 2024C/paper/main.fdb_latexmk
+?? 2024C/paper/main.fls
+?? 2024C/paper/main.log
+?? 2024C/paper/main.out
+?? 2024C/paper/main.pdf

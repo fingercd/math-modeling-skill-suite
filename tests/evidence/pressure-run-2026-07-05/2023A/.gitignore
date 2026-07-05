@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Caches
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Outputs (do NOT commit huge Excel/binary unless needed)
+# Keep Excel for reproducibility; ignore large raw downloads if any
+# outputs/*.xlsx  (we keep these on purpose)
+
+# Sensitive - by policy never commit
+.env
+*.env
+secrets.*
+
+# Local helpers
+local/
+scratch/
+# Common Python artifacts
+__pycache__/
+*.py[cod]
+*.pyc

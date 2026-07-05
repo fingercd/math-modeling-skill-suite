@@ -1,0 +1,10 @@
+# 2023A 定日镜场优化设计 · Python 依赖列表
+# 推荐 Python 3.12.x
+numpy>=1.26
+pandas>=2.2
+openpyxl>=3.1
+matplotlib>=3.8
+scipy>=1.11
+Pillow>=10.0
+# 以下为可选(若需编译 LaTeX):
+# xelatex (TeX Live 或 CTeX)

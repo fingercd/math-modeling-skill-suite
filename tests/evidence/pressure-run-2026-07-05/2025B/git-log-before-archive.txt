@@ -1,0 +1,7 @@
+﻿1922df2 stage(6): final delivery (paper + code + figures + tables + manifest + SHA256)
+6624d79 stage(5): independent review + fixes (N-scan + main.tex judge-paragraph)
+1edb822 stage(4): consolidated result_summary.xlsx + run_all.py end-to-end runner
+a4b0495 stage(3): full code suite + paper LaTeX + all figures + intermediate xlsx
+1df57d7 stage(2): paper outline + figure/table placeholders + code task plan
+e83f419 stage(1): research draft + 4 attachment CSVs downloaded from Skyler-Luo/CUMCM2025-B
+5232c35 test(2025B): scaffold sic-epitaxial-thickness-inversion project + problem + prompt + .gitkeep skeletons

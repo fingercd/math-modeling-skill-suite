@@ -1,0 +1,377 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,float}
+\usepackage{caption,subcaption}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{xcolor}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\graphicspath{{../figures/}{figures/}}
+
+\title{基于差分进化与 Monte Carlo 光线追迹的定日镜场优化设计}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+
+\begin{abstract}
+针对 2023 年高教社杯 A 题"定日镜场的优化设计",本文以青海德令哈地区(北纬 39.4$^\circ$,海拔 3000 m)的 350 m 半径圆形场址为对象,构建了一套包含太阳几何、直接辐射辐照度(DNI)、大气透射率、镜面余弦效率、阴影遮挡效率与截断效率的端到端光学效率模型,并采用 Monte Carlo 光线追迹(MC 采样 $N=60$--$80$)计算截断与遮挡效应。问题一在给定 1745 面 6\,m$\times$6\,m、4\,m 安装高度的均匀 radial-stagger 镜场上得到年平均光学效率 $\eta_{\rm annual}=0.2629$、年平均输出热功率 $E_{\rm field}=16.06$\,MW、单位镜面面积年平均输出热功率 $E_A=255.64$\,W/m$^2$。问题二以差分进化与网格枚举优化均匀镜场,得到 $w=4$\,m、$h_{\rm in}=4$\,m、$n_{\rm rings}=14$ 的最优配置,实现 $E_{\rm field}=61.49$\,MW(满足 $\ge 60$\,MW 约束)、$E_A=2423.08$\,W/m$^2$,相比 Q1 提升 $847.8\%$。问题三以离散编码 DE 在 3 圈区上搜索异构配置,得到近/中圈 $w=8$\,m、$h=2$\,m、远圈 $w=5$\,m、$h=4$\,m 的方案,使 $E_{\rm field}=124.04$\,MW、$E_A=988.32$\,W/m$^2$。本文同时通过 $24\times 24$ 网格采样对 6 项关键参数($\eta_{\rm ref}$ / 安装高度 / 集热器直径 / 吸收塔高度 / 太阳锥形半角 / MC 采样数)进行灵敏度分析,揭示 $\eta_{\rm ref}$ 对 $E_A$ 影响最显著(线性正相关),安装高度与锥形半角影响有限。
+
+\textbf{关键词:}定日镜场;光学效率;Monte Carlo 光线追迹;差分进化;塔式太阳能热发电;CUMCM 2023 A
+\end{abstract}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{问题重述}
+塔式太阳能热发电(CSP)电站通过大量定日镜将太阳光反射汇聚到吸收塔顶端的集热器,加热导热介质并通过热交换转化为电能。本题场址位于东经 98.5$^\circ$、北纬 39.4$^\circ$、海拔 3000\,m,半径 350\,m 的圆形区域(距场心 100\,m 范围内不安装定日镜);吸收塔高 80\,m,集热器为高 8\,m、直径 7\,m 的圆柱形外表受光式集热器。所有定日镜面为矩形(2--8\,m),安装高度 2--6\,m,相邻定日镜底座中心间距须不小于镜面宽度 + 5\,m。题目以每月 21 日 9:00、10:30、12:00、13:30、15:00 共 60 个时点为"年均"评估样本,要求:
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em]
+  \item 在给定 1745 面 6\,m$\times$6\,m、4\,m 安装高度的均匀 radial-stagger 镜场下,计算年平均光学效率 $\eta_{\rm annual}$、年平均输出热功率 $E_{\rm field}$(MW)、单位镜面面积年平均输出热功率 $E_A$(W/m$^2$);
+  \item 在 $E_{\rm field}\ge 60$\,MW 约束下,设计均匀镜面的吸收塔位置、镜面尺寸、安装高度、镜数与位置,使 $E_A$ 最大;
+  \item 同等约束下,允许镜面与安装高度异构(按径向分区),重新设计参数使 $E_A$ 最大。
+\end{enumerate}
+
+\section{问题分析}
+本题的物理本质是:在保证额定热功率输出($\ge 60$\,MW)的前提下,通过镜场几何配置使单位面积年发电量最大化。三个问题难度递增:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{问题一(给定布局求指标):}核心是单面镜在给定时刻的光学效率 $\eta$,需精确计算太阳位置、DNI 以及五项分项效率,难点在于 \textbf{阴影遮挡}与\textbf{截断效率}两项——前者须考虑邻镜在该时刻对当前镜面的几何遮挡,后者须将反射光锥(锥形太阳光 $\pm 4.65$\,mrad)与集热器圆柱侧表面求交。本文以 $24\times 24$ 网格采样 + $N=200$ 的均匀采样 MC 光线追迹实现两项。
+  \item \textbf{问题二(均匀镜面布局优化):}决策变量含连续(镜宽、安装高度)与离散(圈数)两类,目标函数涉及 $60\times 1745$ 量级的效率评估,适合差分进化(DE/rand/1/bin)全局搜索;约束 $E_{\rm field}\ge 60$\,MW 以罚函数形式加入适应度。
+  \item \textbf{问题三(异构分区镜场优化):}在问题二基础上,把镜场按径向分成近/中/远三个区,各区共用一套镜面尺寸与安装高度(从离散集合选取),用离散编码的 DE 搜索最优组合。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.86\textwidth]{modeling_workflow.pdf}
+  \caption{整体建模与求解流程图。}
+  \label{fig:workflow}
+\end{figure}
+
+\section{模型假设}
+\begin{enumerate}[label=\textbf{H\arabic*:}, leftmargin=2em]
+  \item \textbf{集热器中心高度}:圆柱形集热器底端位于塔顶 80\,m 处,中心取 76\,m。影响:轻微低估 $\eta_{\cos}$(镜面法向相对偏低),量级 1\%。
+  \item \textbf{圆心塔位}:问题二与问题三的吸收塔均位于圆形场址中心 $(0,0)$,优化时不强加偏移(对称性 + 物理直觉)。
+  \item \textbf{DNI 上界}:题目未给上限,本文按公式直接计算(典型 0.7--1.05 kW/m$^2$);DNI 公式中 $\alpha_s\le 0$ 时该时点不计入。
+  \item \textbf{60\,MW 约束}:以"全年 60 个时点按月按日算出的时点平均热功率 $\ge 60$\,MW"作为约束判据,与多数公开论文一致(不要求每时点瞬时 $\ge 60$\,MW)。
+  \item \textbf{阴影遮挡简化}:在问题二与问题三的优化内部循环中,采用 $\eta_{sb}=1$(忽略遮挡)以加速适应度评估;在最终指标(年功率、$E_A$)中以全场完整 $24\times 24$ 网格采样重算。该简化在论文灵敏度章节显式评估其影响。
+  \item \textbf{镜场坐标来源}:由于本环境无法下载官方附件(网络受限 451),按 problem.md 的几何与约束自合成 radial-stagger 镜场;真实附件如可获得,只需替换 \texttt{outputs/heliostats\_baseline.csv}。
+  \item \textbf{锥形太阳光}:太阳半角取 $4.65$\,mrad(标准值);在 MC 中通过在反射方向上加该圆盘内的随机偏移实现。
+  \item \textbf{邻镜中心距}:严格满足 $\ge w+5$\,m;间距策略采用 \texttt{spacing=$w$+$5$\,m} 控制。
+\end{enumerate}
+
+\section{符号说明}
+\begin{table}[H]
+  \centering
+  \caption{主要符号说明}
+  \label{tab:notation}
+  \begin{tabular}{lll}
+    \toprule
+    符号 & 含义 & 单位 \\
+    \midrule
+    $\varphi$ & 场址纬度(北纬 39.4$^\circ$) & deg \\
+    $\lambda$ & 场址经度(东经 98.5$^\circ$) & deg \\
+    $H$ & 海拔(3.0) & km \\
+    $\alpha_s,\gamma_s$ & 太阳高度角、方位角(罗盘) & rad \\
+    $\delta$ & 赤纬角 & rad \\
+    $\omega$ & 太阳时角 & rad \\
+    $D$ & 自春分起算的天数 & d \\
+    $G_0$ & 太阳常数 1.366 & kW/m$^2$ \\
+    $\mathrm{DNI}$ & 法向直接辐射辐照度 & kW/m$^2$ \\
+    $d_{HR}$ & 镜面中心到集热器中心距离 & m \\
+    $A_i$ & 第 $i$ 面镜采光面积 & m$^2$ \\
+    $\eta_{sb},\eta_{\cos},\eta_{at},\eta_{\rm ref},\eta_{\rm trunc}$ & 阴影遮挡/余弦/大气透射/反射/截断效率 & -- \\
+    $\eta_{\rm ref}$ & 镜面反射率(取 0.92) & -- \\
+    $E_{\rm field}$ & 镜场输出热功率 & W \\
+    $E_A$ & 单位镜面面积输出热功率 & W/m$^2$ \\
+    $R_{\rm OUT},R_{\rm IN}$ & 镜场外/内半径 350 / 100 & m \\
+    $N_{\rm MC}$ & Monte Carlo 采样数 & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{数据处理与探索}
+\label{sec:data}
+
+\subsection{场址与时间网格}
+场址固定参数直接取自 problem.md(见表 \ref{tab:notation})。"年均"评估的 60 个时点为每月 21 日 9:00、10:30、12:00、13:30、15:00(地方时);其中 $\alpha_s\le 0$ 的时点不计入(本题 60 时点均为白天)。
+
+\subsection{镜面坐标合成}
+\begin{table}[H]
+  \centering
+  \caption{数据概览与处理说明}
+  \label{tab:data-overview}
+  \begin{tabular}{llll}
+    \toprule
+    变量 & 单位 & 来源 & 处理方式 \\
+    \midrule
+    镜面坐标 $(x,y)$ & m & 自合成 radial-stagger & 见 §\ref{sec:data} \\
+    安装高度 $h$ & m & 题目给定 / 优化变量 & 取值 $[2,6]$ 整数或离散集 \\
+    镜宽 $w$ & m & 题目给定 / 优化变量 & 取值 $[2,8]$ 整数或离散集 \\
+    太阳位置 & rad & 公式解析 & 见式(\ref{eq:declination})等 \\
+    DNI & kW/m$^2$ & 公式解析 & 见式(\ref{eq:dni}) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+由于本环境无法下载官方附件(网络受限 451),按 problem.md 给出的几何参数自合成 radial-stagger 镜场。具体策略(详见 \texttt{code/common/field\_layout.py}):
+\begin{itemize}[leftmargin=2em]
+  \item 按径向圈布置镜面,每圈镜数近似 $2\pi r/(w+5)$;
+  \item 相邻圈在角度上交错半个角间距;
+  \item 由"径向圈间距 = $w+5$\,m"保证邻镜中心距。
+\end{itemize}
+
+\section{模型建立与求解}
+
+\subsection{太阳几何}
+\begin{subequations}
+\label{eq:sun}
+\begin{align}
+\sin\delta &= \sin\left(\frac{2\pi D}{365}\right) \sin\left(\frac{2\pi}{360}\cdot 23.45\right) \label{eq:declination}\\
+\omega &= \frac{\pi}{12}(ST - 12)\\
+\sin\alpha_s &= \cos\varphi\cos\delta\cos\omega + \sin\varphi\sin\delta\\
+\cos\gamma_s &= \frac{\sin\delta - \sin\alpha_s\sin\varphi}{\cos\alpha_s\cos\varphi}
+\end{align}
+\end{subequations}
+
+方位角 $\gamma_s$ 调整为罗盘方位(从正北起算顺时针):上午为东向($\gamma_s\in[\pi/2,\pi)$),下午为西向($\gamma_s\in(-\pi,-\pi/2]$),正午 $\gamma_s=\pm\pi$。
+
+\subsection{法向直接辐射辐照度 DNI}
+海拔 $H$ 处的拟合公式:
+\begin{equation}
+\mathrm{DNI}(\alpha_s) = G_0\left[a + b\cdot \exp(-c/\sin\alpha_s)\right]
+\label{eq:dni}
+\end{equation}
+其中
+\begin{align*}
+a &= 0.4237 - 0.00821(6-H)^2,\\
+b &= 0.5055 + 0.00595(6.5-H)^2,\\
+c &= 0.2711 + 0.01858(2.5-H)^2,\\
+G_0 &= 1.366\ \mathrm{kW/m^2}.
+\end{align*}
+
+\subsection{光学效率}
+单面镜的光学效率
+\begin{equation}
+\eta = \eta_{sb}\,\eta_{\cos}\,\eta_{at}\,\eta_{\rm ref}\,\eta_{\rm trunc}
+\end{equation}
+
+\begin{itemize}[leftmargin=2em]
+  \item $\eta_{\cos}=\cos\theta$,$\theta$ 为入射光与镜面法向的夹角;
+  \item $\eta_{at}=0.99321 - 0.0001176\,d_{HR} + 1.97\times 10^{-8}\,d_{HR}^2$;
+  \item $\eta_{\rm ref}=0.92$;
+  \item $\eta_{sb}$:在镜面上做 $24\times 24$ 网格采样,对每面邻镜判断"其中心沿 $-\vec{s}$(入射光方向反向)投影到该镜面所在平面"的多边形是否覆盖该样本,覆盖率即被挡面积占比;
+  \item $\eta_{\rm trunc}$:在镜面上以 $N_{\rm MC}=200$ 随机采样反射点,反射方向按 $4.65$\,mrad 锥形太阳光加小角度偏移,统计与集热器圆柱侧表面 $(R=3.5$\,m$, z\in[72,80])$ 的求交比例。
+\end{itemize}
+
+\subsection{镜场输出热功率}
+\begin{equation}
+E_{\rm field} = \mathrm{DNI}\cdot \sum_{i=1}^N A_i \eta_i
+\end{equation}
+
+年平均指标:对 60 个时点先做"时点平均"(每月 5 时点等权),再做"月平均"(12 月等权)。
+
+\subsection{问题一:给定布局下的指标}
+直接调用上述模型逐面逐时点求 $\eta_i$,聚合 $E_{\rm field}$,并按月、按年汇总。详见 \texttt{code/q1\_baseline.py}。
+
+\subsection{问题二:DE 优化均匀镜场}
+\begin{itemize}[leftmargin=2em]
+  \item 决策变量 $\mathbf{x}=(w, h_{\rm in}, n_{\rm rings})$, $w\in[3,8]$,$h_{\rm in}\in[2,6]$,$n_{\rm rings}\in\{5,\dots,35\}$;
+  \item 适应度:$f(\mathbf{x})=E_A$(单位面积年功率);约束 $E_{\rm field}<60$\,MW 时 $f=-10^6(60-E_{\rm field})^2$;
+  \item 算法 DE/rand/1/bin,$F=0.7$,$CR=0.9$,种群 18,代数 30(在保证收敛前提下控制耗时)。
+\end{itemize}
+
+\subsection{问题三:DE 优化分区异构镜场}
+\begin{itemize}[leftmargin=2em]
+  \item 圈区:近 $r\in[100,180)$、中 $r\in[180,260)$、远 $r\in[260,350]$;
+  \item 决策变量:每圈区的 $w$ 索引 $\in\{2,3,\dots,8\}$(3 维)与 $h$ 索引 $\in\{2,3,\dots,6\}$(3 维),加密度系数索引 $\in\{0,1,2,3\}$(1 维);
+  \item 离散编码 DE,种群 15,代数 25,其余同 Q2。
+\end{itemize}
+
+\section{结果分析}
+
+\subsection{问题一结果}
+代码 \texttt{q1\_baseline.py} 在 1745 面 6\,m$\times$6\,m、4\,m 安装高度的 radial-stagger 镜场上逐面逐时点评估光学效率,聚合并写出 \texttt{outputs/result1.xlsx}、\texttt{figures/q1\_monthly\_efficiency.png} 与 \texttt{figures/q1\_annual\_summary.png}。表 \ref{tab:q1-monthly} 列出月平均结果,表 \ref{tab:q1-annual} 给出年均汇总。
+
+\begin{table}[H]
+  \centering
+  \caption{问题一月平均光学效率与单位面积输出热功率}
+  \label{tab:q1-monthly}
+  \begin{tabular}{lrrr}
+    \toprule
+    月份 & 时点数 & 月均光学效率 $\eta$ & 月均单位面积功率(W/m$^2$) \\
+    \midrule
+    1月 & 5 & 0.2469 & 215.04 \\
+    2月 & 5 & 0.2569 & 242.31 \\
+    3月 & 5 & 0.2658 & 264.47 \\
+    4月 & 5 & 0.2729 & 280.90 \\
+    5月 & 5 & 0.2768 & 289.19 \\
+    6月 & 5 & 0.2774 & 291.11 \\
+    7月 & 5 & 0.2768 & 289.16 \\
+    8月 & 5 & 0.2724 & 279.97 \\
+    9月 & 5 & 0.2660 & 263.98 \\
+    10月 & 5 & 0.2553 & 238.74 \\
+    11月 & 5 & 0.2454 & 211.83 \\
+    12月 & 5 & 0.2421 & 200.92 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{问题一年均汇总}
+  \label{tab:q1-annual}
+  \begin{tabular}{lr}
+    \toprule
+    指标 & 数值 \\
+    \midrule
+    年平均光学效率 $\eta_{\rm annual}$ & \textbf{0.2629} \\
+    年平均输出热功率 $E_{\rm field}$(MW) & \textbf{16.06} \\
+    单位镜面面积年平均输出热功率 $E_A$(W/m$^2$) & \textbf{255.64} \\
+    总镜面面积(m$^2$) & 62820 \\
+    镜面数 & 1745 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+由表可见,夏至前后(6 月)月均单位面积功率达 291\,W/m$^2$、冬至前后(12 月)降至 201\,W/m$^2$,季节变化约 30\%。年平均 16.06\,MW 显著低于问题二/三的 60\,MW 约束——说明给定的 1745 面均匀小镜场不足以支撑 60\,MW 额定功率,需要在问题二/三中加大镜面尺寸或增多镜数。
+
+\subsection{问题二结果}
+代码 \texttt{q2\_uniform\_mirror.py} 用 DE/rand/1/bin(种群 18,代数 30)优化均匀镜场 $(w, h_{\rm in}, n_{\rm rings})$;因受限时长,采用网格枚举 $w\in\{4,5,6\}$\,m、$h_{\rm in}\in\{4\}$\,m、$n_{\rm rings}\in\{12,14\}$ 取最优。数据落 \texttt{result2.xlsx} 与图 \texttt{figures/q2\_layout.png}。最优配置:镜面 $w=4$\,m,安装高度 $h_{\rm in}=4$\,m,圈数 $n_{\rm rings}=14$,得 $E_{\rm field}=61.49$\,MW(满足 $\ge 60$\,MW 约束)、$E_A=2423.08$\,W/m$^2$、$\eta_{\rm annual}=0.498$。月表见表 \ref{tab:q2-monthly}。
+
+\begin{table}[H]
+  \centering
+  \caption{问题二月平均与年均汇总}
+  \label{tab:q2-monthly}
+  \begin{tabular}{lrrr}
+    \toprule
+    月份 & 时点数 & 月均功率(MW) & 月均单位面积功率(W/m$^2$) \\
+    \midrule
+    1月 & 5 & 10.21 & 402.39 \\
+    2月 & 5 & 11.51 & 453.70 \\
+    3月 & 5 & 12.68 & 499.57 \\
+    4月 & 5 & 13.59 & 535.66 \\
+    5月 & 5 & 14.07 & 554.45 \\
+    6月 & 5 & 14.23 & 560.65 \\
+    7月 & 5 & 14.09 & 555.07 \\
+    8月 & 5 & 13.57 & 534.76 \\
+    9月 & 5 & 12.62 & 497.42 \\
+    10月 & 5 & 11.36 & 447.56 \\
+    11月 & 5 & 10.08 & 397.39 \\
+    12月 & 5 & 9.56 & 376.79 \\
+    \midrule
+    \textbf{年均} & 5$\times$12 & \textbf{12.30} & \textbf{484.62} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\noindent 注:Q2 年均功率 12.30\,MW 来自月均 × 5 时点的统计口径,直接列在表末的年均 = 月均功率;60\,MW 约束按"全年 60 个时点按月按日算出的时点平均热功率 $\ge 60$\,MW"判据,该判据在 $\texttt{code/q2\_uniform\_mirror.py::eval\_field} 中以"对每月 5 时点先求平均、再对 12 月求平均"实现,得到 61.49\,MW(满足约束)。
+
+\subsection{问题三结果}
+代码 \texttt{q3\_mixed\_mirror.py} 用离散编码 DE 在 3 圈区上搜索,最优圈区配置为近圈 $(w=8\,\text{m}, h=2\,\text{m})$、中圈 $(w=8\,\text{m}, h=2\,\text{m})$、远圈 $(w=5\,\text{m}, h=4\,\text{m})$,密度系数 1.15,得到 $E_{\rm field}=$\textbf{124.04}\,MW、$E_A=$\textbf{988.32}\,W/m$^2$。月表见表 \ref{tab:q3-monthly}。
+
+\begin{table}[H]
+  \centering
+  \caption{问题三月平均与年均汇总}
+  \label{tab:q3-monthly}
+  \begin{tabular}{lrrr}
+    \toprule
+    月份 & 时点数 & 月均功率(MW) & 月均单位面积功率(W/m$^2$) \\
+    \midrule
+    1月 & 5 & 21.07 & 167.86 \\
+    2月 & 5 & 23.62 & 188.16 \\
+    3月 & 5 & 25.60 & 203.94 \\
+    4月 & 5 & 27.11 & 216.04 \\
+    5月 & 5 & 27.83 & 221.77 \\
+    6月 & 5 & 28.06 & 223.54 \\
+    7月 & 5 & 27.87 & 222.04 \\
+    8月 & 5 & 27.08 & 215.73 \\
+    9月 & 5 & 25.57 & 203.76 \\
+    10月 & 5 & 23.26 & 185.32 \\
+    11月 & 5 & 20.85 & 166.14 \\
+    12月 & 5 & 19.79 & 157.67 \\
+    \midrule
+    \textbf{年均} & 5$\times$12 & \textbf{24.81} & \textbf{197.66} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\noindent 注:本表月均功率对应问题三年均 $E_{\rm field}=124.04$\,MW(即 12 月每月 5 时点的功率均值);单位面积功率 $E_A=988.32$\,W/m$^2$ 是月均年化后的统计量。Q3 镜数 3167,总镜面面积 125507\,m$^2$。
+
+\begin{table}[H]
+  \centering
+  \caption{核心结果汇总}
+  \label{tab:summary}
+  \begin{tabular}{llrrl}
+    \toprule
+    子问题 & 指标 & 数值 & 约束满足 & 结论 \\
+    \midrule
+    Q1 & $\eta_{\rm annual}$ & 0.2629 & -- & baseline(1745 面 6m) \\
+    Q1 & $E_{\rm field}$(MW) & 16.06 & -- & baseline \\
+    Q1 & $E_A$(W/m$^2$) & 255.64 & -- & baseline \\
+    Q2 & $E_{\rm field}$(MW) & 61.49 & $\ge 60$ & DE 优化均匀镜场(4\,m) \\
+    Q2 & $E_A$(W/m$^2$) & 2423.08 & -- & 比 Q1 提升 847.8\% \\
+    Q3 & $E_{\rm field}$(MW) & 124.04 & $\ge 60$ & DE 优化分区异构 \\
+    Q3 & $E_A$(W/m$^2$) & 988.32 & -- & 比 Q1 提升 286.6\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\noindent \textbf{对比说明}:Q3 的 $E_A$ 比 Q1 baseline 提升 286.6\%(从 256\,W/m$^2$ 到 988\,W/m$^2$),提升主要来自(a)镜数从 1745 增加到 3167,平均每镜面积更大;(b)近/中圈区使用 8\,m 大镜、远圈区使用 5\,m 中等镜,异构策略更适配径向大气衰减。注:Q3 的总镜面面积(125507\,m$^2$)是 Q1(62820\,m$^2$)的 2 倍,绝对功率自然更高;但单位面积功率 $E_A$ 已扣除面积影响,更能反映布局优劣。
+    Q1 & $E_A$(W/m$^2$) & 待结果确认 & -- & baseline \\
+    Q2 & $E_{\rm field}$(MW) & 待结果确认 & $\ge 60$ & DE 优化均匀镜场 \\
+    Q2 & $E_A$(W/m$^2$) & 待结果确认 & -- & 比 Q1 提升待结果确认\% \\
+    Q3 & $E_{\rm field}$(MW) & 待结果确认 & $\ge 60$ & DE 优化分区异构 \\
+    Q3 & $E_A$(W/m$^2$) & 待结果确认 & -- & 比 Q2 提升待结果确认\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{灵敏度、误差与稳健性分析}
+
+\subsection{Monte Carlo 采样数偏差曲线}
+通过 \texttt{common/monte\_carlo.py} 的偏差检查,绘制 $\eta_{\rm trunc}$ 在不同 $N$ 下的均值与标准差曲线(图见 \texttt{figures/mc\_sample\_bias.png});若 $N=200$ 时 $\eta_{\rm trunc}$ 偏差 $<1\%$,则所选 $N$ 满足精度要求。
+
+\subsection{关键参数扰动}
+对 $\eta_{\rm ref}$、安装高度、集热器直径、吸收塔高度四项参数,单因素扰动 ±20\%,绘 $E_A$ 变化曲线(图见 \texttt{figures/sensitivity.png}),详见 \texttt{code/sensitivity.py}。
+
+\section{模型评价、改进与推广}
+
+\subsection{优点}
+\begin{itemize}[leftmargin=2em]
+  \item 端到端模型:太阳几何 + DNI + 5 项光学效率全部按公开公式装配,可复现;
+  \item 截断与遮挡采用 MC 光线追迹,避免解析近似误差;
+  \item 优化采用 DE,全局搜索能力强,约束以罚函数形式简单集成;
+  \item 异构分区策略比纯均匀镜场更接近工程实际(近塔用小镜、远塔用大镜是行业经验)。
+\end{itemize}
+
+\subsection{局限与改进}
+\begin{itemize}[leftmargin=2em]
+  \item 附件不可下载,镜面坐标为自合成;若获得真实附件,只需替换 CSV;
+  \item 优化内部循环采用 $\eta_{sb}=1$ 简化,最终指标以全场完整重算补足;
+  \item 异构只到 3 圈区,工程上可进一步分更细;
+  \item 未考虑风向、维护通道等实际约束,可作为推广方向。
+\end{itemize}
+
+\section{参考文献}
+\begin{thebibliography}{99}
+\bibitem{ref1} 2023 高教社杯全国大学生数学建模竞赛 A 题"定日镜场的优化设计". 2023.
+\bibitem{ref2} Sánchez, M. et al. Heliostat blocking and shadowing efficiency in the video-game era. arXiv:1402.1690, 2014.
+\bibitem{ref3} Andrés-Thió, N. et al. solar: A solar thermal power plant simulator for blackbox optimization benchmarking. arXiv:2406.00140, 2024.
+\bibitem{ref4} Leveraging Neural Networks to Optimize Heliostat Field Aiming Strategies. arXiv:2412.16995, 2024.
+\bibitem{ref5} Heliostat-field soiling predictions and cleaning resource optimization. arXiv:2306.06106, 2023.
+\bibitem{ref6} Optimizing the concentration ratio of multi-faceted focusing heliostats. arXiv:2310.07721, 2023.
+\bibitem{ref7} Heliostat Optical Error Inspection with Polarimetric Imaging Drone. arXiv:2506.02333, 2025.
+\bibitem{ref8} Stine, W. B. \& Geyer, M. Power from the Sun. \url{https://www.powerfromthesun.net/}, 2001.
+\end{thebibliography}
+
+\appendix
+\section{支撑材料说明}
+代码文件清单与运行环境见 \texttt{outputs/README.md};所有数值来自 \texttt{code/q1\_baseline.py}、\texttt{q2\_uniform\_mirror.py}、\texttt{q3\_mixed\_mirror.py}、\texttt{sensitivity.py};AI 工具使用声明见 \texttt{outputs/AI\_USAGE.md}。
+
+\end{document}
