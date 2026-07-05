@@ -1,0 +1,5315 @@
+{
+  "actions": [
+    {
+      "plot": 0,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 0,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 1,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 2,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 3,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 4,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 5,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 6,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 7,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 8,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 9,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 10,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 11,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 12,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 13,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 14,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 15,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 16,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 17,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 18,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 19,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 20,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 21,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 22,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 23,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 24,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 0,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 1,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 2,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 3,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 4,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 5,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 6,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 7,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 8,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 9,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 10,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 11,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 12,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 13,
+      "season": 1
+    },
+    {
+      "plot": 25,
+      "crop": 14,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 15,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 26,
+      "crop": 34,
+      "season": 2
+    },
+    {
+      "plot": 26,
+      "crop": 35,
+      "season": 2
+    },
+    {
+      "plot": 26,
+      "crop": 36,
+      "season": 2
+    },
+    {
+      "plot": 27,
+      "crop": 15,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 27,
+      "crop": 34,
+      "season": 2
+    },
+    {
+      "plot": 27,
+      "crop": 35,
+      "season": 2
+    },
+    {
+      "plot": 27,
+      "crop": 36,
+      "season": 2
+    },
+    {
+      "plot": 28,
+      "crop": 15,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 28,
+      "crop": 34,
+      "season": 2
+    },
+    {
+      "plot": 28,
+      "crop": 35,
+      "season": 2
+    },
+    {
+      "plot": 28,
+      "crop": 36,
+      "season": 2
+    },
+    {
+      "plot": 29,
+      "crop": 15,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 29,
+      "crop": 34,
+      "season": 2
+    },
+    {
+      "plot": 29,
+      "crop": 35,
+      "season": 2
+    },
+    {
+      "plot": 29,
+      "crop": 36,
+      "season": 2
+    },
+    {
+      "plot": 30,
+      "crop": 15,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 30,
+      "crop": 34,
+      "season": 2
+    },
+    {
+      "plot": 30,
+      "crop": 35,
+      "season": 2
+    },
+    {
+      "plot": 30,
+      "crop": 36,
+      "season": 2
+    },
+    {
+      "plot": 31,
+      "crop": 15,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 31,
+      "crop": 34,
+      "season": 2
+    },
+    {
+      "plot": 31,
+      "crop": 35,
+      "season": 2
+    },
+    {
+      "plot": 31,
+      "crop": 36,
+      "season": 2
+    },
+    {
+      "plot": 32,
+      "crop": 15,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 32,
+      "crop": 34,
+      "season": 2
+    },
+    {
+      "plot": 32,
+      "crop": 35,
+      "season": 2
+    },
+    {
+      "plot": 32,
+      "crop": 36,
+      "season": 2
+    },
+    {
+      "plot": 33,
+      "crop": 15,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 33,
+      "crop": 34,
+      "season": 2
+    },
+    {
+      "plot": 33,
+      "crop": 35,
+      "season": 2
+    },
+    {
+      "plot": 33,
+      "crop": 36,
+      "season": 2
+    },
+    {
+      "plot": 34,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 34,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 34,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 34,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 34,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 35,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 35,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 35,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 35,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 35,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 36,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 36,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 36,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 36,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 36,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 37,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 37,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 37,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 37,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 37,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 38,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 38,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 38,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 38,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 38,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 39,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 39,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 39,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 39,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 39,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 40,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 40,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 40,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 40,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 40,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 41,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 41,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 41,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 41,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 41,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 42,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 42,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 42,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 42,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 42,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 43,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 43,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 43,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 43,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 43,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 44,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 44,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 44,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 44,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 44,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 45,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 45,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 45,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 45,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 45,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 46,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 46,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 46,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 46,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 46,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 47,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 47,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 47,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 47,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 47,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 48,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 48,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 48,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 48,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 48,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 49,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 49,
+      "crop": 37,
+      "season": 2
+    },
+    {
+      "plot": 49,
+      "crop": 38,
+      "season": 2
+    },
+    {
+      "plot": 49,
+      "crop": 39,
+      "season": 2
+    },
+    {
+      "plot": 49,
+      "crop": 40,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 16,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 17,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 18,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 19,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 20,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 21,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 22,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 23,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 24,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 25,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 26,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 27,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 28,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 29,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 30,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 31,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 32,
+      "season": 2
+    },
+    {
+      "plot": 50,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 50,
+      "crop": 33,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 16,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 17,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 18,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 19,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 20,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 21,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 22,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 23,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 24,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 25,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 26,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 27,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 28,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 29,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 30,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 31,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 32,
+      "season": 2
+    },
+    {
+      "plot": 51,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 51,
+      "crop": 33,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 16,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 17,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 18,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 19,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 20,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 21,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 22,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 23,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 24,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 25,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 26,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 27,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 28,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 29,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 30,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 31,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 32,
+      "season": 2
+    },
+    {
+      "plot": 52,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 52,
+      "crop": 33,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 16,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 16,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 17,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 17,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 18,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 18,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 19,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 19,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 20,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 20,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 21,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 21,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 22,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 22,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 23,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 23,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 24,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 24,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 25,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 25,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 26,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 26,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 27,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 27,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 28,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 28,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 29,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 29,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 30,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 30,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 31,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 31,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 32,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 32,
+      "season": 2
+    },
+    {
+      "plot": 53,
+      "crop": 33,
+      "season": 1
+    },
+    {
+      "plot": 53,
+      "crop": 33,
+      "season": 2
+    }
+  ],
+  "n_actions": 1062
+}
